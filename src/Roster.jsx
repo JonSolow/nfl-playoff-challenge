@@ -1,14 +1,12 @@
 import React from 'react';
 import Player from './Player';
+import './Roster.scss';
 
-const WEEK_NUMBER = 18;
-
-function Roster({ roster }) {
-  const rosterByWeek = roster[WEEK_NUMBER];
+function Roster({ weekData }) {
+  const weeklyRoster = weekData.roster;
   return (
     <ul className="roster">
-      Roster:
-      {rosterByWeek.map(player => {
+      {weeklyRoster.map(player => {
         const { roster_slot, player_name, position, team, score } = player;
         return <Player
           key={roster_slot}

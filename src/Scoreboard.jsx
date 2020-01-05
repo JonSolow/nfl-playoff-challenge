@@ -1,14 +1,14 @@
 import React from 'react';
 import User from './User';
+import './Scoreboard.scss';
 
-function Scoreboard({ userData }) {
+function Scoreboard({ dataByUser }) {
 
   return (
     <ol className="scoreboard">
-      Scoreboard
-      {userData.map(user => {
-        const { username, roster } = user;
-        return <User key={username} username={username} roster={roster}/>
+      {dataByUser.map(userData => {
+        const { user, total_score, ...rest } = userData;
+        return <User key={user} username={user} totalScore={total_score} {...rest} />
       })}
     </ol>
   );

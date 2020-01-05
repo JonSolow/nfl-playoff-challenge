@@ -1,4 +1,24 @@
-ul, ol {
-  list-style-type: none;
-  padding-left: 0;
+@import './vars';
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.header__wrapper {
+  background-color: $light-grey;
+  padding: 0.2rem;
+  border: white 1px solid;
+  border-radius: 0.2rem;
+}
+
+.header__title {
+  background-color: $dark-grey;
+  text-align: center;
+  font-size: 1.5rem;
+  border: white 1px solid;
+  padding: 1rem;
+  border-radius: 0.2rem;
 }

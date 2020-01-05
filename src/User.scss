@@ -1,0 +1,23 @@
+@import './vars';
+
+.user {
+  padding: 1rem;
+  border: white 1px solid;
+  border-radius: 0.2rem;
+  margin: 0.4rem 0.2rem;
+  background-color: $dark-grey;
+}
+
+.user__user-data {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.user__user-info {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  width: 88%;
+}
