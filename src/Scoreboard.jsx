@@ -4,11 +4,14 @@ import './Scoreboard.scss';
 
 function Scoreboard({ dataByUser }) {
 
+  dataByUser.sort((a,b) => parseInt(a.total_score) < parseInt(b.total_score) ? 1 : -1);
+
   return (
     <ol className="scoreboard">
-      {dataByUser.map(userData => {
+      {dataByUser.map((userData, i) => {
         const { user, total_score, ...rest } = userData;
-        return <User key={user} username={user} totalScore={total_score} {...rest} />
+        const place = i + 1;
+        return <User key={user} username={user} totalScore={total_score} place={place} {...rest} />
       })}
     </ol>
   );

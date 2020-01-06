@@ -1,7 +1,7 @@
 @import './vars';
 
 .user {
-  padding: 1rem;
+  padding-bottom: 1rem;
   border: white 1px solid;
   border-radius: 0.2rem;
   margin: 0.4rem 0.2rem;
@@ -14,10 +14,39 @@
   justify-content: center;
 }
 
+.user__username-and-place {
+  display: flex;
+  align-items: center;
+}
+
+.user__username {
+  color: black;
+}
+
 .user__user-info {
   font-size: 1.5rem;
+  font-weight: bold;
   display: flex;
   justify-content: space-between;
   margin-bottom: 0.5rem;
-  width: 88%;
+  background-color: $lighter-grey;
+  width: 100%;
+}
+
+.user__place {
+  padding: 0.1rem 0.6rem;
+  margin-right: 0.4rem;
+  background-color: $blue;
+}
+
+.user__total-score {
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.user__score-number {
+  background-color: $yellow;
+  padding: 0.1rem 0.6rem;
+  margin-left: 0.4rem;
 }

@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './App.scss';
 import Scoreboard from './Scoreboard.jsx';
-// import data from './playoffchallengedata.json';
 
 const GROUP_NUMBER = 70532;
 
 function App() {
-
-  // const dataByUser = data.response.user;
-  // const loading = false;
   
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState();
@@ -18,7 +14,7 @@ function App() {
     return fetch(`http://playoffchallengebackend.herokuapp.com/api/?group=${GROUP_NUMBER}`)
       .then(response => response.json());
   }
-  console.log('dataByUser', dataByUser);
+
   useEffect(() => {
     fetchData().then(data => {
       setData(data);
