@@ -2,11 +2,16 @@ import React from 'react';
 import Roster from './Roster';
 import './User.scss'
 
-const WEEK_NUMBER = 18;
+const WEEK_NAMES = {
+  18: 'Wild Card',
+  19: 'Divisional',
+  20: 'Conference',
+  22: 'Super Bowl',
+  total: 'TOTAL',
+}
 
 function User(props) {
-  const { username, totalScore, place } = props;
-  const weekData = props[WEEK_NUMBER];
+  const { username, place, totalScore, weekToDisplay, weekData } = props;
   return (
     <li className="user">
       <div className="user__user-data">
@@ -17,10 +22,10 @@ function User(props) {
           </div>
           <div className="user__total-score">
             <span className="user__score-type">
-              Wild Card:
+              {`${WEEK_NAMES[weekToDisplay]}:`}
             </span>
             <span className="user__score-number">
-              {totalScore}
+              {weekToDisplay === 'total' ? totalScore : weekData.week_score}
             </span>
           </div>
         </div>

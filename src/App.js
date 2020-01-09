@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import './App.scss';
-import Scoreboard from './Scoreboard.jsx';
+import './App.scss'
+import Header from './Header';
+import Scoreboard from './Scoreboard';
 
 const GROUP_NUMBER = 70532;
+const CURRENT_WEEK = 18;
 
 function App() {
   
   const [loading, setLoading] = useState(true);
+  const [weekToDisplay, setWeekToDisplay] = useState(CURRENT_WEEK);
   const [data, setData] = useState();
   const dataByUser = data ? data.response.users : {};
-  
+
   const fetchData = () => {
     return fetch(`http://playoffchallengebackend.herokuapp.com/api/?group=${GROUP_NUMBER}`)
       .then(response => response.json());
@@ -23,12 +26,12 @@ function App() {
 
   return (
     <>
-      <div className="header">
-        <div className="header__wrapper">
-          <div className="header__title">NFL Playoff Challenge</div>
-        </div>
-      </div>
-     {loading ? 'Loading....' : <Scoreboard dataByUser={dataByUser}/>}
+      <Header setWeekToDisplay={setWeekToDisplay}/>
+      {
+        loading
+          ? <div className='loading'><div className="loading__text">Loading...</div></div>
+          : <Scoreboard dataByUser={dataByUser} weekToDisplay={weekToDisplay} currentWeek={CURRENT_WEEK}/>
+      }
     </>
   );
 }
