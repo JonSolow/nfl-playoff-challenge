@@ -4,10 +4,11 @@
   display: flex;
   justify-content: center;
   padding: 0.2rem;
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
   position: sticky;
   top: 0;
   background-color: $medium-grey;
+  border-bottom: $light-grey 0.2rem solid;
 }
 
 .header__wrapper {

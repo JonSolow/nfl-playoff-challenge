@@ -3,7 +3,7 @@ import User from './User';
 import './Scoreboard.scss';
 
 function Scoreboard(props) {
-  const { dataByUser, weekToDisplay, currentWeek } = props;
+  const { dataByUser, weekToDisplay } = props;
 
   // need to change this to sort by the week's score if weekToDisplay is not total
   dataByUser.sort((a,b) => parseInt(a.total_score) < parseInt(b.total_score) ? 1 : -1);
@@ -14,10 +14,7 @@ function Scoreboard(props) {
         const { user, total_score } = userData;
         const place = i + 1;
 
-        let weekData = userData[weekToDisplay];
-        if (!weekData) {
-          weekData = userData[currentWeek];
-        }
+        const weekData = userData[weekToDisplay];
 
         return (
           <User

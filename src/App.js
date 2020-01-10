@@ -30,7 +30,7 @@ function App() {
       {
         loading
           ? <div className='loading'><div className="loading__text">Loading...</div></div>
-          : <Scoreboard dataByUser={dataByUser} weekToDisplay={weekToDisplay} currentWeek={CURRENT_WEEK}/>
+          : <Scoreboard dataByUser={dataByUser} weekToDisplay={weekToDisplay}/>
       }
     </>
   );
