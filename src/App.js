@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <Header setWeekToDisplay={setWeekToDisplay}/>
+      <Header weekToDisplay={weekToDisplay} setWeekToDisplay={setWeekToDisplay}/>
       {
         loading
           ? <div className='loading'><div className="loading__text">Loading...</div></div>
