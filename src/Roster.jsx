@@ -13,17 +13,42 @@ const ROSTER_SLOT_POSITIONS = {
   8: 'DEF',
 };
 
+const MISSING_TEAMS_FOR_PLAYERS = {
+  'Mark Ingram': 'BAL',
+  'Marquise Brown': 'BAL',
+  'Mark Andrews': 'BAL',
+  'Lamar Jackson': 'BAL',
+  'Travis Kelce': 'KC',
+  'Baltimore Ravens': 'BAL',
+  'Raheem Mostert': 'SF',
+  'Tyreek Hill': 'SF',
+  'Damien Williams': 'KC',
+  'Harrison Butker': 'KC',
+  'Deebo Samuel': 'SF',
+  'George Kittle': 'SF',
+  'San Francisco 49ers': 'SF',
+  'Justin Tucker': 'BAL',
+  'Aaron Jones': 'GB',
+  'Davante Adams': 'GB',
+  'Robbie Gould': 'SF',
+  'Jimmy Garoppolo': 'SF',
+}
+
 function Roster({ weekData }) {
   const weeklyRoster = weekData.roster;
   return (
     <ul className="roster">
       {weeklyRoster.map(player => {
-        const { roster_slot, player_name, position, team, score, multiplier } = player;
+        const { roster_slot, player_name, team, score, multiplier } = player;
+        let teamName = team;
+        if (player_name !== ' ' && team === 'None') {
+          teamName = MISSING_TEAMS_FOR_PLAYERS[player_name];
+        }
         return <Player
           key={roster_slot}
           name={player_name}
           position={ROSTER_SLOT_POSITIONS[roster_slot]}
-          team={team}
+          team={teamName}
           score={score}
           multiplier={multiplier}
         />
