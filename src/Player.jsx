@@ -11,12 +11,16 @@ function Player(props) {
           {position}
         </div>
         <div className="player__info">
-          <div className="player__name">
-            {name}
-          </div>
-          <div className="player__team">
-            {team}
-          </div>
+          {name !== ' ' ? (
+            <>
+              <div className="player__name">
+                {name}
+              </div>
+              <div className="player__team">
+                {team}
+              </div>
+            </>
+          ) : null}
         </div>
         <div className="player__score-info">
           <span className={multiplierClasses}>
