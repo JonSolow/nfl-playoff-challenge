@@ -1,20 +1,59 @@
 @import './vars.scss';
 
 .player {
-  border: white 1px solid;
   border-radius: 0.2rem;
   margin: 0.2rem;
   width: 7.5rem;
   background-color: $light-grey;
 }
 
+.player--NO {
+  background-color: #D3BC8D;
+}
+
+.player--NE {
+  background-color: #C60C30;
+}
+
+.player--SEA {
+  background-color: #69BE28;
+}
+
+.player--BAL {
+  background-color: #241773;
+}
+
+.player--MIN {
+  background-color: #4F2683;
+}
+
+.player--HOU {
+  background-color: #A71930;
+}
+
+.player--KC {
+  background-color: #E31837;
+}
+
+.player--SF {
+  background-color: #AA0000;
+}
+
+.player--GB {
+  background-color: #FFB612;
+}
+
+.player--TEN {
+  background-color: #4B92DB;
+}
+
 .player__data {
-  border: white 1px solid;
+  border: white 0.1rem solid;
   border-radius: 0.2rem;
   padding: 0.2rem;
   margin: 0.2rem;
   background-color: $medium-grey;
-  height: 13rem;
+  min-height: 13rem;
 }
 
 .player__position {
@@ -53,7 +92,7 @@
 
 .player__multiplier {
   padding: 0.2rem;
-  border: white 1px solid;
+  border: white 0.05rem solid;
   border-radius: 0.2rem;
   font-size: 0.85rem;
   color: black;
