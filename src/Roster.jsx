@@ -37,6 +37,10 @@ const MISSING_TEAMS_FOR_PLAYERS = {
 
 function Roster({ weekData }) {
   const weeklyRoster = weekData.roster;
+  weeklyRoster.sort((a,b) => {
+    return parseInt(a.roster_slot) > parseInt(b.roster_slot)
+      ? 1 : -1
+  });
   return (
     <ul className="roster">
       {weeklyRoster.map(player => {
