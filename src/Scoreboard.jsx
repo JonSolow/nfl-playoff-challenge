@@ -5,8 +5,10 @@ import './Scoreboard.scss';
 function Scoreboard(props) {
   const { dataByUser, weekToDisplay } = props;
 
-  // need to change this to sort by the week's score if weekToDisplay is not total
-  dataByUser.sort((a,b) => parseInt(a.total_score) < parseInt(b.total_score) ? 1 : -1);
+  dataByUser.sort((a,b) => {
+    return parseInt(a[weekToDisplay].week_score) < parseInt(b[weekToDisplay].week_score)
+      ? 1 : -1
+  });
 
   return (
     <ol className="scoreboard">
