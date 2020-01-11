@@ -2,7 +2,8 @@ import React from 'react';
 import './Player.scss';
 
 function Player(props) {
-  const { name, position, team, score } = props;
+  const { name, position, team, score, multiplier } = props;
+  const multiplierClasses=`player__multiplier player__multiplier--${multiplier}`;
   return (
     <li className="player">
       <div className="player__data">
@@ -17,8 +18,13 @@ function Player(props) {
             {team}
           </div>
         </div>
-        <div className="player__score">
-          {score}
+        <div className="player__score-info">
+          <span className={multiplierClasses}>
+            {multiplier}X BONUS
+          </span>
+          <span className="player__score">
+            {score}
+          </span>
         </div>
       </div>
     </li>

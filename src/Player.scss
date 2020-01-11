@@ -22,7 +22,7 @@
 }
 
 .player__info {
-  min-height: 6rem;
+  min-height: 6.25rem;
   margin: 0.4rem 0.2rem;
 }
 
@@ -31,8 +31,38 @@
   margin: 0.2rem 0rem;
 }
 
+.player__score-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0.2rem;
+}
+
+.player__multiplier {
+  padding: 0.2rem;
+  border: white 1px solid;
+  border-radius: 0.2rem;
+  font-size: 0.85rem;
+  color: black;
+}
+
+.player__multiplier--1 {
+  visibility: hidden;
+}
+
+.player__multiplier--2 {
+  background-color: silver;
+}
+
+.player__multiplier--3 {
+  background-color: gold;
+}
+
+.player__multiplier--4 {
+  background-color: #8c0404;
+  color: white;
+}
+
 .player__score {
-  text-align: end;
-  margin-right: 0.2rem;
   font-size: 1.5rem;
 }
