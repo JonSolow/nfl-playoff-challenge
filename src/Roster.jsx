@@ -32,6 +32,7 @@ const MISSING_TEAMS_FOR_PLAYERS = {
   'Davante Adams': 'GB',
   'Robbie Gould': 'SF',
   'Jimmy Garoppolo': 'SF',
+  'Emmanuel Sanders': 'SF',
 }
 
 function Roster({ weekData }) {
@@ -39,14 +40,19 @@ function Roster({ weekData }) {
   return (
     <ul className="roster">
       {weeklyRoster.map(player => {
-        const { roster_slot, player_name, team, score, multiplier } = player;
+        const { roster_slot, player_name, img_url, team, score, multiplier } = player;
         let teamName = team;
+        let playerName = player_name;
         if (player_name !== ' ' && team === 'None') {
           teamName = MISSING_TEAMS_FOR_PLAYERS[player_name];
         }
+        if (player_name === 'San Francisco 49ers') {
+          playerName = 'San Fran. 49s';
+        }
         return <Player
           key={roster_slot}
-          name={player_name}
+          name={playerName}
+          img={img_url}
           position={ROSTER_SLOT_POSITIONS[roster_slot]}
           team={teamName}
           score={score}

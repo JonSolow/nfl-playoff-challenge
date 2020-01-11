@@ -2,7 +2,7 @@ import React from 'react';
 import './Player.scss';
 
 function Player(props) {
-  const { name, position, team, score, multiplier } = props;
+  const { name, img, position, team, score, multiplier } = props;
   const multiplierClasses=`player__multiplier player__multiplier--${multiplier}`;
   return (
     <li className="player">
@@ -13,6 +13,9 @@ function Player(props) {
         <div className="player__info">
           {name !== ' ' ? (
             <>
+              <div className="player__image">
+                {img ? <img className="player__img" src={img} alt={name}/> : null}
+              </div>
               <div className="player__name">
                 {name}
               </div>

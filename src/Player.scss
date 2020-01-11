@@ -14,7 +14,7 @@
   padding: 0.2rem;
   margin: 0.2rem;
   background-color: $medium-grey;
-  height: 10rem;
+  height: 13rem;
 }
 
 .player__position {
@@ -22,12 +22,25 @@
 }
 
 .player__info {
-  min-height: 6.25rem;
+  min-height: 9.25rem;
   margin: 0.4rem 0.2rem;
 }
 
+.player__image {
+  display: flex;
+  justify-content: center;
+  height: 5rem;
+}
+
+.player__img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  object-position: top;
+}
+
 .player__name {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin: 0.2rem 0rem;
 }
 
