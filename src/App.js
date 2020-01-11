@@ -1,10 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.scss'
 import Header from './Header';
 import Scoreboard from './Scoreboard';
 
 const GROUP_NUMBER = 70532;
 const CURRENT_WEEK = 18;
+const TWO_MINUTES = 120000;
+
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
+
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+}
 
 function App() {
   
@@ -15,14 +34,20 @@ function App() {
 
   const fetchData = () => {
     return fetch(`http://playoffchallengebackend.herokuapp.com/api/?group=${GROUP_NUMBER}`)
-      .then(response => response.json());
+      .then(response => response.json())
+      .then(data => {
+        setData(data);
+        setLoading(false);
+      });
   }
 
   useEffect(() => {
-    fetchData().then(data => {
-      setData(data);
-      setLoading(false);
-    })}, []);
+    fetchData();
+  }, []);
+
+  useInterval(() => {
+    fetchData();
+  }, TWO_MINUTES);
 
   return (
     <>
