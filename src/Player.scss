@@ -97,24 +97,23 @@
   border-radius: 0.2rem;
   font-size: 0.75rem;
   color: black;
-}
-
-.player__multiplier--None,
-.player__multiplier--1 {
   visibility: hidden;
 }
 
 .player__multiplier--2 {
   background-color: silver;
+  visibility: visible;
 }
 
 .player__multiplier--3 {
   background-color: gold;
+  visibility: visible;
 }
 
 .player__multiplier--4 {
   background-color: #8c0404;
   color: white;
+  visibility: visible;
 }
 
 .player__score {

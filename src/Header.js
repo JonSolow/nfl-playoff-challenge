@@ -16,7 +16,7 @@ const WEEKS = [
   {
     name: 'Conference',
     number: 20,
-    disabled: true,
+    disabled: false,
   },
   {
     name: 'Super Bowl',
