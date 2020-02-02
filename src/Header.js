@@ -21,7 +21,7 @@ const WEEKS = [
   {
     name: 'Super Bowl',
     number: 22,
-    disabled: true,
+    disabled: false,
   },
   {
     name: 'TOTAL',
