@@ -4,7 +4,7 @@ import Header from './Header';
 import Scoreboard from './Scoreboard';
 
 const GROUP_NUMBER = 70532;
-const CURRENT_WEEK = 22;
+const CURRENT_WEEK = 18;
 const TWO_MINUTES = 120000;
 
 function useInterval(callback, delay) {
