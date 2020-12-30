@@ -33,7 +33,7 @@ function App() {
   const dataByUser = data ? data.response.users : {};
 
   const fetchData = () => {
-    return fetch(`http://playoffchallengebackend.herokuapp.com/api/?group=${GROUP_NUMBER}`)
+    return fetch(`https://playoffchallengebackend.herokuapp.com/api/?group=${GROUP_NUMBER}`)
       .then(response => response.json())
       .then(data => {
         setData(data);
