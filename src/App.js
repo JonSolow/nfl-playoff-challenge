@@ -4,7 +4,7 @@ import Header from './Header';
 import Scoreboard from './Scoreboard';
 
 const GROUP_NUMBER = 70532;
-const CURRENT_WEEK = 22;
+const CURRENT_WEEK = 18;
 const TWO_MINUTES = 120000;
 
 function useInterval(callback, delay) {
@@ -33,7 +33,7 @@ function App() {
   const dataByUser = data ? data.response.users : {};
 
   const fetchData = () => {
-    return fetch(`http://playoffchallengebackend.herokuapp.com/api/?group=${GROUP_NUMBER}`)
+    return fetch(`https://playoffchallengebackend.herokuapp.com/api/?group=${GROUP_NUMBER}`)
       .then(response => response.json())
       .then(data => {
         setData(data);

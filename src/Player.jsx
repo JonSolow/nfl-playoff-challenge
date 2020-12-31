@@ -12,7 +12,6 @@ function Player(props) {
           {position}
         </div>
         <div className="player__info">
-          {name !== ' ' ? (
             <>
               <div className="player__image">
                 {img ? <img className="player__img" src={img} alt={name}/> : null}
@@ -24,7 +23,6 @@ function Player(props) {
                 {team}
               </div>
             </>
-          ) : null}
         </div>
         <div className="player__score-info">
           <span className={multiplierClasses}>
