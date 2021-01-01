@@ -11,7 +11,7 @@ const WEEK_NAMES = {
 }
 
 function User(props) {
-  const { username, place, totalScore, weekToDisplay, weekData } = props;
+  const { username, place, selectedWeek, weekScore, roster } = props;
   return (
     <li className="user">
       <div className="user__user-data">
@@ -22,14 +22,14 @@ function User(props) {
           </div>
           <div className="user__total-score">
             <span className="user__score-type">
-              {`${WEEK_NAMES[weekToDisplay]}:`}
+              {`${WEEK_NAMES[selectedWeek]}:`}
             </span>
             <span className="user__score-number">
-              {weekToDisplay === 'total' ? totalScore : weekData.week_score}
+              {weekScore}
             </span>
           </div>
         </div>
-        <Roster weekData={weekData} />
+        <Roster roster={roster} />
       </div>
     </li>
   );

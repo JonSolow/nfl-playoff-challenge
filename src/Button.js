@@ -2,11 +2,11 @@ import React from 'react';
 import './Button.scss'
 
 function Button(props) {
-  const { name, number, disabled, selected, setWeekToDisplay } = props;
+  const { name, number, disabled, selected, setSelectedWeek } = props;
   return (
     <button
       className={`button--selected-${selected}`}
-      onClick={() => {setWeekToDisplay(number); window.scrollTo(0, 0)}}
+      onClick={() => {setSelectedWeek(number); window.scrollTo(0, 0)}}
       disabled={disabled}
     >
       {name}

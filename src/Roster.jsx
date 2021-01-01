@@ -35,15 +35,14 @@ const MISSING_TEAMS_FOR_PLAYERS = {
   'Emmanuel Sanders': 'SF',
 }
 
-function Roster({ weekData }) {
-  const weeklyRoster = weekData.roster;
-  weeklyRoster.sort((a,b) => {
+function Roster({ roster }) {
+  roster.sort((a,b) => {
     return parseInt(a.roster_slot) > parseInt(b.roster_slot)
       ? 1 : -1
   });
   return (
     <ul className="roster">
-      {weeklyRoster.map(player => {
+      {roster.map(player => {
         const { roster_slot, player_name, img_url, team, score, multiplier } = player;
         let teamName = team;
         let playerName = player_name;

@@ -31,7 +31,7 @@ const WEEKS = [
 ];
 
 function Header(props) {
-  const { weekToDisplay, setWeekToDisplay } = props;
+  const { selectedWeek, setSelectedWeek } = props;
   return (
     <div className="header">
       <div className="header__wrapper">
@@ -47,8 +47,8 @@ function Header(props) {
                 name={name}
                 number={number}
                 disabled={disabled}
-                selected={weekToDisplay === number}
-                setWeekToDisplay={setWeekToDisplay}
+                selected={selectedWeek === number}
+                setSelectedWeek={setSelectedWeek}
               />
             );
           })}
