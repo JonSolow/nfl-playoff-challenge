@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import get from 'lodash/get';
 import './App.scss'
 import Header from './Header';
 import Scoreboard from './Scoreboard';
@@ -28,15 +29,14 @@ function useInterval(callback, delay) {
 function App() {
   
   const [loading, setLoading] = useState(true);
-  const [weekToDisplay, setWeekToDisplay] = useState(CURRENT_WEEK);
+  const [selectedWeek, setSelectedWeek] = useState(CURRENT_WEEK);
   const [data, setData] = useState();
-  const dataByUser = data ? data.response.users : {};
 
   const fetchData = () => {
     return fetch(`https://playoffchallengebackend.herokuapp.com/api/?group=${GROUP_NUMBER}`)
       .then(response => response.json())
       .then(data => {
-        setData(data);
+        setData(get(data, ['response', 'users'], ''));
         setLoading(false);
       });
   }
@@ -49,13 +49,14 @@ function App() {
     fetchData();
   }, TWO_MINUTES);
 
+  const weekData = get(data, `${selectedWeek}`);
   return (
     <>
-      <Header weekToDisplay={weekToDisplay} setWeekToDisplay={setWeekToDisplay}/>
+      <Header selectedWeek={selectedWeek} setSelectedWeek={setSelectedWeek}/>
       {
         loading
           ? <div className='loading'><div className="loading__text">Loading...</div></div>
-          : <Scoreboard dataByUser={dataByUser} weekToDisplay={weekToDisplay}/>
+          : <Scoreboard selectedWeek={selectedWeek} weekData={weekData}/>
       }
     </>
   );
