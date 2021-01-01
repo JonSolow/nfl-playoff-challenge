@@ -33,7 +33,7 @@ function App() {
   const [data, setData] = useState();
 
   const fetchData = () => {
-    return fetch(`https://playoffchallengebackend.herokuapp.com/api/?group=${GROUP_NUMBER}`)
+    return fetch(`https://playoff-backend-pr-7.herokuapp.com/api/?sample=1`)
       .then(response => response.json())
       .then(data => {
         setData(get(data, ['response', 'users'], ''));
