@@ -4,7 +4,6 @@ import './App.scss'
 import Header from './Header';
 import Scoreboard from './Scoreboard';
 
-const GROUP_NUMBER = 70532;
 const CURRENT_WEEK = 18;
 const TWO_MINUTES = 120000;
 
@@ -33,7 +32,7 @@ function App() {
   const [data, setData] = useState();
 
   const fetchData = () => {
-    return fetch(`${process.env.REACT_APP_BACKEND_URL}/api/?group=${GROUP_NUMBER}`)
+    return fetch(`${process.env.REACT_APP_BACKEND_URL}/api/?group=${process.env.REACT_APP_GROUP_ID}`)
       .then(response => response.json())
       .then(data => {
         setData(get(data, ['response', 'users'], ''));
