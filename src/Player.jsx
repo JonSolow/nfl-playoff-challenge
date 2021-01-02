@@ -7,7 +7,6 @@ function Player(props) {
   const multiplierClasses = `player__multiplier player__multiplier--${multiplier}`;
   return (
     <li className={playerClasses}>
-      {/* <div className="player__data"> */}
       <div className="player__position">
         {position}
       </div>
@@ -16,25 +15,18 @@ function Player(props) {
       </div>
       <div className="player__info">
         <div className="player__name">
-          {/* {name} */}
-        Player name
-      </div>
+          {name}
+        </div>
         <div className="player__team">
-          {/* {team} */}
-        Team name
+          {team}
+        </div>
       </div>
-      </div>
-      {/* <div className="player__score-info"> */}
       <span className="player__score">
-        {/* {score} */}
-        500
+        {score}
       </span>
       <span className={multiplierClasses}>
-        {/* {multiplier}X */}
-        2X
+        {multiplier}X
       </span>
-      {/* </div> */}
-      {/* </div> */}
     </li>
   );
 }

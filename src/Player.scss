@@ -65,11 +65,6 @@
   grid-area: player;
 }
 
-// .player__name {
-//   grid-area: player;
-  // padding-bottom: $small;
-// }
-
 .player__team {
   font-weight: 100;
   font-size: 0.8rem;
@@ -143,6 +138,7 @@
     overflow-wrap: break-word;
     margin: 0.3em 0;
     box-shadow: 0 0 2px 1px white;
+    min-height: 2.5em;
   }
 
   .player__score {
@@ -155,63 +151,3 @@
     box-shadow: 0 0 2px 1px white;
   }
 }
-// .player__score-info {
-  // display: flex;
-  // flex-direction: column;
-// }
-// .player__data {
-//   border: white 0.1rem solid;
-//   border-radius: 0.2rem;
-//   padding: 0.2rem;
-//   margin: 0.2rem;
-//   background-color: $medium-grey;
-//   min-height: 13.25rem;
-// }
-
-// .player__position {
-//   font-weight: bold;
-// }
-
-// .player__info {
-//   min-height: 9.3rem;
-//   margin: 0.4rem 0.2rem;
-// }
-
-// .player__image {
-//   display: flex;
-//   justify-content: center;
-//   height: 5rem;
-// }
-
-// .player__img {
-//   width: 5rem;
-//   height: 5rem;
-//   object-fit: cover;
-//   object-position: top;
-// }
-
-// .player__name {
-//   font-size: 1.25rem;
-//   margin: 0.2rem 0rem;
-// }
-
-// .player__score-info {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-end;
-//   margin: 0.2rem;
-// }
-
-// .player__multiplier {
-//   padding: 0.2rem;
-//   border: white 0.05rem solid;
-//   border-radius: 0.2rem;
-//   font-size: 0.75rem;
-//   color: black;
-//   visibility: hidden;
-// }
-
-
-// .player__score {
-//   font-size: 1.5rem;
-// }

@@ -37,7 +37,7 @@ const MISSING_TEAMS_FOR_PLAYERS = {
 }
 
 function Roster({ roster }) {
-  roster.sort((a,b) => {
+  roster.sort((a, b) => {
     return parseInt(a.roster_slot) > parseInt(b.roster_slot)
       ? 1 : -1
   });
