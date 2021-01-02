@@ -1,17 +1,12 @@
 @import './vars';
 
 .user {
-  padding-bottom: 1em;
-  border: white 0.05em solid;
-  border-radius: 0.2em;
-  margin: 0.4em 0.2em;
+  border-radius: $large;
+  margin: $medium $small;
   background-color: $dark-grey;
+  box-shadow: 0 0 0.1em 0.1em white;
   font-size: 1.5rem;
-}
-
-.user {
   padding: 1em;
-  // margin-bottom: 1em;
   display: grid;
   align-items: center;
   grid-template-columns: 15% 70% 15%;
@@ -26,10 +21,11 @@
 }
 
 .user__place {
-  font-family: $font-3;
   font-size: 2rem;
+  font-family: $font-3;
+  font-weight: 700;
   grid-area: place;
-  // justify-self: center;
+  justify-self: left;
 }
 
 .user__username {
@@ -39,11 +35,13 @@
 
 .user__score-number {
   font-family: $font-3;
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  padding-right: 0.25em;
+  padding: 0.1em 0.25em;
   grid-area: score;
   justify-self: end;
+  box-shadow: 0 0 0.1em 0.05em $yellow;
+  border-radius: $small;
 }
 
 .user__roster {

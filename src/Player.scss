@@ -1,13 +1,5 @@
 @import './vars.scss';
 
-.player {
-  border-radius: $small;
-  margin: $small $small $small 0;
-  // width: 7.5rem;
-  background-color: $light-grey;
-  // min-height: 14.25rem;
-}
-
 // .player--NO {
 //   background-color: #D3BC8D;
 // }
@@ -49,8 +41,11 @@
 // }
 
 .player {
+  border-radius: $large;
+  margin: $medium 0;
   font-size: 1rem;
-  padding: 0.5em;
+  background-color: $light-grey;
+  padding: $medium;
   display: grid;
   align-items: center;
   grid-template-columns: 15% 70% 15%;
@@ -64,6 +59,7 @@
   font-family: $font-2;
   font-size: 1.75rem;
   grid-area: position;
+  padding-left: $small;
 }
 
 .player__name {
@@ -80,7 +76,29 @@
   font-family: $font-3;
   grid-area: multiplier;
   justify-self: end;
+  font-size: 0.8rem;
   font-weight: 700;
+  border-radius: 1em;
+  padding: $small;
+  margin-right: $medium;
+  visibility: hidden;
+}
+
+.player__multiplier--2 {
+  background-color: silver;
+  color: black;
+  visibility: visible;
+}
+
+.player__multiplier--3 {
+  background-color: gold;
+  color: black;
+  visibility: visible;
+}
+
+.player__multiplier--4 {
+  background-color: #8c0404;
+  visibility: visible;
 }
 
 .player__score {
@@ -88,6 +106,7 @@
   font-size: 1.5rem;
   grid-area: score;
   justify-self: end;
+  padding-right: $small;
 }
 
 .player__image {
@@ -150,21 +169,6 @@
 //   visibility: hidden;
 // }
 
-// .player__multiplier--2 {
-//   background-color: silver;
-//   visibility: visible;
-// }
-
-// .player__multiplier--3 {
-//   background-color: gold;
-//   visibility: visible;
-// }
-
-// .player__multiplier--4 {
-//   background-color: #8c0404;
-//   color: white;
-//   visibility: visible;
-// }
 
 // .player__score {
 //   font-size: 1.5rem;
