@@ -32,3 +32,9 @@
   justify-content: center;
   gap: $medium;
 }
+
+@media (min-width: 650px) {
+  .header__title {
+    font-size: 3rem;
+  }
+}
