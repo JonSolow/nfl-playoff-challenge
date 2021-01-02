@@ -5,23 +5,19 @@
   margin: $medium $small;
   background-color: $dark-grey;
   box-shadow: 0 0 0.1em 0.1em white;
-  font-size: 1.5rem;
+  font-size: 1rem;
   padding: 1em;
   display: grid;
   align-items: center;
-  grid-template-columns: 15% 70% 15%;
+  grid-template-columns: 2.5em auto 4em;
   grid-template-rows: auto;
   grid-template-areas:
     "place username score"
     "roster roster roster";
 }
 
-.user__score-type {
-  display: none;
-}
-
 .user__place {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: $font-3;
   font-weight: 700;
   grid-area: place;
@@ -33,13 +29,22 @@
   font-weight: 100;
 }
 
+.user__score-type {
+  font-size: 1.2rem;
+  font-weight: 100;
+  justify-self: end;
+  margin-right: 4em;
+}
+
 .user__score-number {
   font-family: $font-3;
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-weight: 700;
   padding: 0.1em 0.25em;
   grid-area: score;
   justify-self: end;
+  width: 2.5em;
+  text-align: right;
   box-shadow: 0 0 0.1em 0.05em $yellow;
   border-radius: $small;
 }
@@ -47,6 +52,34 @@
 .user__roster {
   margin-top: $small;
   grid-area: roster;
+}
+
+@media (min-width: 650px) {
+  .user {
+    grid-template-columns: 2.5em auto 12em;
+  }
+
+  .user__place,
+  .user__score-number {
+    font-size: 1.8rem;
+  }
+
+  .user__username {
+    font-size: 1.7rem;
+  }
+
+  .user__score-type {
+    grid-area: score;
+  }
+
+  .user__roster {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1 1 100%;
+    gap: $medium;
+    margin-top: 1em;
+  }
 }
 
 // .user__user-data {

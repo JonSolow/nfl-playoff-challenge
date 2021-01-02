@@ -14,24 +14,24 @@ function Player(props) {
       <div className="player__image">
         <img className="player__img" src={img} alt={name} />
       </div>
-      {/* <div className="player__info"> */}
-      <div className="player__name">
-        {/* {name} */}
+      <div className="player__info">
+        <div className="player__name">
+          {/* {name} */}
         Player name
       </div>
-      <div className="player__team">
-        {/* {team} */}
+        <div className="player__team">
+          {/* {team} */}
         Team name
       </div>
-      {/* </div> */}
+      </div>
       {/* <div className="player__score-info"> */}
-      <span className={multiplierClasses}>
-        {/* {multiplier}X */}
-        2X
-      </span>
       <span className="player__score">
         {/* {score} */}
         500
+      </span>
+      <span className={multiplierClasses}>
+        {/* {multiplier}X */}
+        2X
       </span>
       {/* </div> */}
       {/* </div> */}

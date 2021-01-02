@@ -1,20 +1,19 @@
 @import './vars';
 
 .header {
-  display: flex;
-  justify-content: center;
   font-family: $font-2;
-  padding: $medium;
   position: sticky;
   top: 0;
   background-color: $medium-grey;
   box-shadow: 0 $small $small $light-grey;
+  padding: $medium;
 }
 
 .header__wrapper {
-  padding: $medium;
   max-width: 40em;
   width: 100%;
+  padding: $medium;
+  margin: 0 auto;
 }
 
 .header__title {
