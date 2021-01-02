@@ -1,36 +1,35 @@
 @import './vars';
 
 .header {
-  font-family: $font-2;
   display: flex;
   justify-content: center;
-  padding: $small;
+  font-family: $font-2;
+  padding: $medium;
   position: sticky;
   top: 0;
   background-color: $medium-grey;
-  border-bottom: $light-grey $small solid;
+  box-shadow: 0 $small $small $light-grey;
 }
 
 .header__wrapper {
-  background-color: $light-grey;
-  padding: $small;
-  border: white 0.05em solid;
-  border-radius: $small;
-  max-width: 540px;
+  padding: $medium;
+  max-width: 40em;
   width: 100%;
 }
 
 .header__title {
   background-color: $dark-grey;
   text-align: center;
-  font-size: 2rem;
-  border: white 0.05rem solid;
+  font-size: 2.5rem;
   padding: 1rem;
-  border-radius: $small;
+  border-radius: $large;
+  margin-bottom: $medium;
+  box-shadow: 0 0 $small $lighter-grey;
 }
 
 .header__buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: $medium;
 }

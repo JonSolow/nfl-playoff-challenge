@@ -1,23 +1,54 @@
 @import './vars';
 
-button {
+.button {
+  position: relative;
   font-size: 1rem; 
-  min-width: 6em;
   padding: 0.5em;
-  border-color: white;
-  border-radius: $small;
+  border: none;
+  background: none;
+  border-radius: 3em;
   margin: 0.1em;
   background-color: $lighter-grey;
   cursor: pointer;
   font-family: $font-1;
+  flex: 1 1 18%;
+  min-width: 7em;
+  box-shadow: -0.1em 0.1em 0.1em $lightest-grey;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-button[disabled] {
+.button[disabled] {
   background-color: $lightest-grey;
   color: $lighter-grey;
 }
 
 .button--selected-true {
-  background-color: $blue;
+  background-color: $light-grey;
   color: white;
+  box-shadow: -0.1em 0.1em 0.1em $blue;
+}
+
+.button:not(.button--selected-true):hover,
+.button:not(.button--selected-true):focus {
+  background-color: $light-grey;
+  color: white;
+}
+
+.button::after,
+.button::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 3em;
+  box-shadow: -$small $small $medium $blue;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.button:hover::after,
+.button:focus::after {
+  opacity: 1;
 }
