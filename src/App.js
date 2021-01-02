@@ -26,7 +26,7 @@ function useInterval(callback, delay) {
 }
 
 function App() {
-  
+
   const [loading, setLoading] = useState(true);
   const [selectedWeek, setSelectedWeek] = useState(CURRENT_WEEK);
   const [data, setData] = useState();
@@ -51,11 +51,11 @@ function App() {
   const weekData = get(data, `${selectedWeek}`);
   return (
     <>
-      <Header selectedWeek={selectedWeek} setSelectedWeek={setSelectedWeek}/>
+      <Header selectedWeek={selectedWeek} setSelectedWeek={setSelectedWeek} />
       {
         loading
-          ? <div className='loading'><div className="loading__text">Loading...</div></div>
-          : <Scoreboard selectedWeek={selectedWeek} weekData={weekData}/>
+          ? <div className='loading'>Loading...</div>
+          : <Scoreboard selectedWeek={selectedWeek} weekData={weekData} />
       }
     </>
   );

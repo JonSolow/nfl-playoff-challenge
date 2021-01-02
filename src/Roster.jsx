@@ -1,4 +1,5 @@
 import React from 'react';
+import get from 'lodash//get';
 import Player from './Player';
 import './Roster.scss';
 
@@ -41,13 +42,13 @@ function Roster({ roster }) {
       ? 1 : -1
   });
   return (
-    <ul className="roster">
+    <ul className="user__roster">
       {roster.map(player => {
         const { roster_slot, player_name, img_url, team, score, multiplier } = player;
         let teamName = team;
         let playerName = player_name;
         if (player_name !== ' ' && team === 'None') {
-          teamName = MISSING_TEAMS_FOR_PLAYERS[player_name];
+          teamName = get(MISSING_TEAMS_FOR_PLAYERS, player_name, 'None');
         }
         if (player_name === 'San Francisco 49ers') {
           playerName = 'San Fran. 49s';

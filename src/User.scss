@@ -1,52 +1,95 @@
 @import './vars';
 
 .user {
-  padding-bottom: 1rem;
-  border: white 0.05rem solid;
-  border-radius: 0.2rem;
-  margin: 0.4rem 0.2rem;
+  padding-bottom: 1em;
+  border: white 0.05em solid;
+  border-radius: 0.2em;
+  margin: 0.4em 0.2em;
   background-color: $dark-grey;
-}
-
-.user__user-data {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.user__username-and-place {
-  display: flex;
-  align-items: center;
-}
-
-.user__username {
-  color: black;
-}
-
-.user__user-info {
   font-size: 1.5rem;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0.5rem;
-  background-color: $lighter-grey;
-  width: 100%;
+}
+
+.user {
+  padding: 1em;
+  // margin-bottom: 1em;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "place username score"
+    "roster roster roster";
+}
+
+.user__score-type {
+  display: none;
 }
 
 .user__place {
-  padding: 0.1rem 0.6rem;
-  margin-right: 0.4rem;
-  background-color: $blue;
+  font-family: $font-3;
+  font-size: 2rem;
+  grid-area: place;
+  // justify-self: center;
 }
 
-.user__total-score {
-  display: flex;
-  align-items: center;
-  color: black;
+.user__username {
+  grid-area: username;
+  font-weight: 100;
 }
 
 .user__score-number {
-  background-color: $yellow;
-  padding: 0.1rem 0.6rem;
-  margin-left: 0.4rem;
+  font-family: $font-3;
+  font-size: 2rem;
+  font-weight: 700;
+  padding-right: 0.25em;
+  grid-area: score;
+  justify-self: end;
 }
+
+.user__roster {
+  margin-top: $small;
+  grid-area: roster;
+}
+
+// .user__user-data {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+// }
+
+// .user__username-and-place {
+//   display: flex;
+//   align-items: center;
+// }
+
+// .user__username {
+//   color: black;
+// }
+
+// .user__user-info {
+//   font-size: 1.5rem;
+//   font-weight: bold;
+//   display: flex;
+//   justify-content: space-between;
+//   margin-bottom: 0.5rem;
+//   background-color: $lighter-grey;
+//   width: 100%;
+// }
+
+// .user__place {
+//   padding: 0.1rem 0.6rem;
+//   margin-right: 0.4rem;
+//   background-color: $blue;
+// }
+
+// .user__total-score {
+//   display: flex;
+//   align-items: center;
+//   color: black;
+// }
+
+// .user__score-number {
+//   background-color: $yellow;
+//   padding: 0.1rem 0.6rem;
+//   margin-left: 0.4rem;
+// }

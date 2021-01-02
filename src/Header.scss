@@ -1,21 +1,23 @@
 @import './vars';
 
 .header {
+  font-family: $font-2;
   display: flex;
   justify-content: center;
-  padding: 0.2rem;
-  padding-bottom: 1rem;
+  padding: $small;
   position: sticky;
   top: 0;
   background-color: $medium-grey;
-  border-bottom: $light-grey 0.2rem solid;
+  border-bottom: $light-grey $small solid;
 }
 
 .header__wrapper {
   background-color: $light-grey;
-  padding: 0.2rem;
-  border: white 0.05rem solid;
-  border-radius: 0.2rem;
+  padding: $small;
+  border: white 0.05em solid;
+  border-radius: $small;
+  max-width: 540px;
+  width: 100%;
 }
 
 .header__title {
@@ -24,5 +26,11 @@
   font-size: 2rem;
   border: white 0.05rem solid;
   padding: 1rem;
-  border-radius: 0.2rem;
+  border-radius: $small;
+}
+
+.header__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }

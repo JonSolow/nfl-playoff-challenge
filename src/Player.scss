@@ -1,121 +1,171 @@
 @import './vars.scss';
 
 .player {
-  border-radius: 0.2rem;
-  margin: 0.2rem;
-  width: 7.5rem;
+  border-radius: $small;
+  margin: $small $small $small 0;
+  // width: 7.5rem;
   background-color: $light-grey;
-  min-height: 14.25rem;
+  // min-height: 14.25rem;
 }
 
-.player--NO {
-  background-color: #D3BC8D;
-}
+// .player--NO {
+//   background-color: #D3BC8D;
+// }
 
-.player--NE {
-  background-color: #C60C30;
-}
+// .player--NE {
+//   background-color: #C60C30;
+// }
 
-.player--SEA {
-  background-color: #69BE28;
-}
+// .player--SEA {
+//   background-color: #69BE28;
+// }
 
-.player--BAL {
-  background-color: #241773;
-}
+// .player--BAL {
+//   background-color: #241773;
+// }
 
-.player--MIN {
-  background-color: #4F2683;
-}
+// .player--MIN {
+//   background-color: #4F2683;
+// }
 
-.player--HOU {
-  background-color: #A71930;
-}
+// .player--HOU {
+//   background-color: #A71930;
+// }
 
-.player--KC {
-  background-color: #E31837;
-}
+// .player--KC {
+//   background-color: #E31837;
+// }
 
-.player--SF {
-  background-color: #B3995D;
-}
+// .player--SF {
+//   background-color: #B3995D;
+// }
 
-.player--GB {
-  background-color: #FFB612;
-}
+// .player--GB {
+//   background-color: #FFB612;
+// }
 
-.player--TEN {
-  background-color: #4B92DB;
-}
+// .player--TEN {
+//   background-color: #4B92DB;
+// }
 
-.player__data {
-  border: white 0.1rem solid;
-  border-radius: 0.2rem;
-  padding: 0.2rem;
-  margin: 0.2rem;
-  background-color: $medium-grey;
-  min-height: 13.25rem;
+.player {
+  font-size: 1rem;
+  padding: 0.5em;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 15% 70% 15%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    "position player score"
+    "position team multiplier";
 }
 
 .player__position {
-  font-weight: bold;
-}
-
-.player__info {
-  min-height: 9.3rem;
-  margin: 0.4rem 0.2rem;
-}
-
-.player__image {
-  display: flex;
-  justify-content: center;
-  height: 5rem;
-}
-
-.player__img {
-  width: 5rem;
-  height: 5rem;
-  object-fit: cover;
-  object-position: top;
+  font-family: $font-2;
+  font-size: 1.75rem;
+  grid-area: position;
 }
 
 .player__name {
+  grid-area: player;
   font-size: 1.25rem;
-  margin: 0.2rem 0rem;
 }
 
-.player__score-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin: 0.2rem;
+.player__team {
+  grid-area: team;
+  font-weight: 100;
 }
 
 .player__multiplier {
-  padding: 0.2rem;
-  border: white 0.05rem solid;
-  border-radius: 0.2rem;
-  font-size: 0.75rem;
-  color: black;
-  visibility: hidden;
-}
-
-.player__multiplier--2 {
-  background-color: silver;
-  visibility: visible;
-}
-
-.player__multiplier--3 {
-  background-color: gold;
-  visibility: visible;
-}
-
-.player__multiplier--4 {
-  background-color: #8c0404;
-  color: white;
-  visibility: visible;
+  font-family: $font-3;
+  grid-area: multiplier;
+  justify-self: end;
+  font-weight: 700;
 }
 
 .player__score {
+  font-family: $font-3;
   font-size: 1.5rem;
+  grid-area: score;
+  justify-self: end;
 }
+
+.player__image {
+  display: none;
+}
+
+.player__score-info {
+  // display: flex;
+  // flex-direction: column;
+}
+// .player__data {
+//   border: white 0.1rem solid;
+//   border-radius: 0.2rem;
+//   padding: 0.2rem;
+//   margin: 0.2rem;
+//   background-color: $medium-grey;
+//   min-height: 13.25rem;
+// }
+
+// .player__position {
+//   font-weight: bold;
+// }
+
+// .player__info {
+//   min-height: 9.3rem;
+//   margin: 0.4rem 0.2rem;
+// }
+
+// .player__image {
+//   display: flex;
+//   justify-content: center;
+//   height: 5rem;
+// }
+
+// .player__img {
+//   width: 5rem;
+//   height: 5rem;
+//   object-fit: cover;
+//   object-position: top;
+// }
+
+// .player__name {
+//   font-size: 1.25rem;
+//   margin: 0.2rem 0rem;
+// }
+
+// .player__score-info {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-end;
+//   margin: 0.2rem;
+// }
+
+// .player__multiplier {
+//   padding: 0.2rem;
+//   border: white 0.05rem solid;
+//   border-radius: 0.2rem;
+//   font-size: 0.75rem;
+//   color: black;
+//   visibility: hidden;
+// }
+
+// .player__multiplier--2 {
+//   background-color: silver;
+//   visibility: visible;
+// }
+
+// .player__multiplier--3 {
+//   background-color: gold;
+//   visibility: visible;
+// }
+
+// .player__multiplier--4 {
+//   background-color: #8c0404;
+//   color: white;
+//   visibility: visible;
+// }
+
+// .player__score {
+//   font-size: 1.5rem;
+// }
