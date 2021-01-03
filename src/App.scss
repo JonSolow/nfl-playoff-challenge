@@ -1,4 +1,9 @@
+@import './vars.scss';
+
 .loading {
   display: flex;
   justify-content: center;
+  padding-top: 2em;
+  font-size: 1.5rem;
+  font-family: $font-2;
 }

@@ -1,28 +1,41 @@
 @import './vars';
 
 .header {
-  display: flex;
-  justify-content: center;
-  padding: 0.2rem;
-  padding-bottom: 1rem;
+  font-family: $font-2;
   position: sticky;
   top: 0;
   background-color: $medium-grey;
-  border-bottom: $light-grey 0.2rem solid;
+  box-shadow: 0 $small $small $light-grey;
+  padding: $medium;
+  z-index: 1;
 }
 
 .header__wrapper {
-  background-color: $light-grey;
-  padding: 0.2rem;
-  border: white 0.05rem solid;
-  border-radius: 0.2rem;
+  max-width: 40em;
+  width: 100%;
+  padding: $medium;
+  margin: 0 auto;
 }
 
 .header__title {
   background-color: $dark-grey;
   text-align: center;
-  font-size: 2rem;
-  border: white 0.05rem solid;
+  font-size: 2.5rem;
   padding: 1rem;
-  border-radius: 0.2rem;
+  border-radius: $large;
+  margin-bottom: $medium;
+  box-shadow: 0 0 $small $lighter-grey;
+}
+
+.header__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $medium;
+}
+
+@media (min-width: 450px) {
+  .header__title {
+    font-size: 3rem;
+  }
 }
