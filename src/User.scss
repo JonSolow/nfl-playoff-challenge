@@ -44,10 +44,11 @@
   padding: 0.1em 0.25em;
   grid-area: score;
   justify-self: end;
-  width: 2.5em;
+  width: 2.3em;
   text-align: right;
   box-shadow: 0 0 0.1em 0.05em $yellow;
   border-radius: $small;
+  line-height: 1;
 }
 
 .user__roster {
@@ -55,15 +56,17 @@
   grid-area: roster;
 }
 
-@media (min-width: 450px) {
+@media (min-width: 575px) {
   .user {
     grid-template-columns: 2.5em auto 12em;
+    max-width: 41em;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .user__place,
   .user__score-number {
     font-size: 1.8rem;
-    text-align: left;
   }
 
   .user__username {
@@ -82,5 +85,14 @@
     flex: 1 1 100%;
     gap: $medium;
     margin-top: 1em;
+    max-width: 41em;
+    justify-self: center;
+  }
+}
+
+@media (min-width: 1120px) {
+  .user,
+  .user__roster {
+    max-width: 100%;
   }
 }
