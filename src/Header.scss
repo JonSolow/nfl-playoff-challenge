@@ -7,7 +7,7 @@
   background-color: $medium-grey;
   box-shadow: 0 $small $small $light-grey;
   padding: $medium;
-  z-index: 1;
+  z-index: 2;
 }
 
 .header__wrapper {
@@ -23,8 +23,9 @@
   font-size: 2.5rem;
   padding: 1rem;
   border-radius: $large;
-  margin-bottom: $medium;
+  margin-bottom: 0.3em;
   box-shadow: 0 0 $small $lighter-grey;
+  line-height: 0.9;
 }
 
 .header__buttons {
@@ -34,7 +35,7 @@
   gap: $medium;
 }
 
-@media (min-width: 450px) {
+@media (min-width: 575px) {
   .header__title {
     font-size: 3rem;
   }
