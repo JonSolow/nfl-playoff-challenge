@@ -7,11 +7,10 @@
   padding: $medium;
   display: grid;
   align-items: center;
-  grid-template-columns: 2.2em auto 5em;
+  grid-template-columns: 2.2em auto 2em 2.5em;
   grid-template-rows: auto;
   grid-template-areas: 
-    "position player score"
-    "position player multiplier";
+    "position player multiplier score";
 }
 
 .player--NO {
@@ -77,8 +76,8 @@
   font-size: 0.8rem;
   font-weight: 700;
   border-radius: 1em;
-  padding: $small;
-  margin-right: $medium;
+  padding: 0.4em;
+  box-shadow: 0 0 2px 1px white;
   visibility: hidden;
 }
 
@@ -104,7 +103,6 @@
   font-size: 1.2rem;
   grid-area: score;
   justify-self: end;
-  padding: 0 $small $small 0;
 }
 
 .player__image {
@@ -151,9 +149,6 @@
   }
 
   .player__multiplier {
-    padding: 0.3em;
-    margin: 0;
-    box-shadow: 0 0 2px 1px white;
     transform: translate(0.3em, -0.3em);
   }
 }
