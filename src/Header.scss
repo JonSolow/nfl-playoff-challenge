@@ -7,6 +7,7 @@
   background-color: $medium-grey;
   box-shadow: 0 $small $small $light-grey;
   padding: $medium;
+  z-index: 1;
 }
 
 .header__wrapper {
@@ -33,7 +34,7 @@
   gap: $medium;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 450px) {
   .header__title {
     font-size: 3rem;
   }

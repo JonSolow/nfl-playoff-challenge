@@ -55,7 +55,7 @@
   grid-area: roster;
 }
 
-@media (min-width: 650px) {
+@media (min-width: 450px) {
   .user {
     grid-template-columns: 2.5em auto 12em;
   }
