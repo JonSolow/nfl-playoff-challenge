@@ -124,6 +124,10 @@
     box-shadow: 0 0 2px 1px white;
   }
 
+  .player__position {
+    padding: 0;
+  }
+
   .player__image {
     display: block;
     grid-area: image;
@@ -150,5 +154,6 @@
     padding: 0.3em;
     margin: 0;
     box-shadow: 0 0 2px 1px white;
+    transform: translate(0.3em, -0.3em);
   }
 }
