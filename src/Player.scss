@@ -14,50 +14,6 @@
     "position image team multiplier score";
 }
 
-.player--NO {
-  background-color: #D3BC8D;
-}
-
-.player--PHI {
-  background-color: #004C54;
-}
-
-.player--NE {
-  background-color: #C60C30;
-}
-
-.player--SEA {
-  background-color: #69BE28;
-}
-
-.player--BAL {
-  background-color: #241773;
-}
-
-.player--MIN {
-  background-color: #4F2683;
-}
-
-.player--HOU {
-  background-color: #A71930;
-}
-
-.player--KC {
-  background-color: #E31837;
-}
-
-.player--SF {
-  background-color: #B3995D;
-}
-
-.player--GB {
-  background-color: #FFB612;
-}
-
-.player--TEN {
-  background-color: #4B92DB;
-}
-
 .player__position {
   font-family: $font-2;
   font-size: 1.2rem;
@@ -182,4 +138,132 @@
   .player__multiplier {
     transform: translate(0.3em, -0.3em);
   }
+}
+
+.player--ARI {
+  background-color: #97233F;
+}
+
+.player--ATL {
+  background-color: #A71930;
+}
+
+.player--BAL {
+  background-color: #241773;
+}
+
+.player--BUF {
+  background-color: #00338D;
+}
+
+.player--CAR {
+  background-color: #0085CA;
+}
+
+.player--CHI {
+  background-color: #0B162A;
+}
+
+.player--CIN {
+  background-color: #FB4F14;
+}
+
+.player--CLE {
+  background-color: #FF3C00;
+}
+
+.player--DAL {
+  background-color: #7F9695;
+}
+
+.player--DEN {
+  background-color: #002244;
+}
+
+.player--DET {
+  background-color: #0076B6;
+}
+
+.player--GB {
+  background-color: #203731;
+}
+
+.player--HOU {
+  background-color: #03202F;
+}
+
+.player--IND {
+  background-color: #002C5F;
+}
+
+.player--JAX {
+  background-color: #006778;
+}
+
+.player--KC {
+  background-color: #E31837;
+}
+
+.player--LAC {
+  background-color: #FFC20E;
+}
+
+.player--LAR {
+  background-color: #FFD100;
+}
+
+.player--LV {
+  background-color: #A5ACAF;
+}
+
+.player--MIA {
+  background-color: #008E97;
+}
+
+.player--MIN {
+  background-color: #4F2683;
+}
+
+.player--NE {
+  background-color: #C60C30;
+}
+
+.player--NO {
+  background-color: #D3BC8D;
+}
+
+.player--NYG {
+  background-color: #0B2265;
+}
+
+.player--NYJ {
+  background-color: #125740;
+}
+
+.player--PHI {
+  background-color: #004C54;
+}
+
+.player--PIT {
+  background-color: #FFB612;
+}
+
+.player--SEA {
+  background-color: #69BE28;
+}
+
+.player--SF {
+  background-color: #AA0000;
+}
+
+.player--TB {
+  background-color: #D50A0A;
+}
+
+.player--TEN {
+  background-color: #4B92DB;
+}
+
+.player--WAS {
+  background-color: #773141;
 }
