@@ -28,8 +28,9 @@
   box-shadow: -0.1em 0.1em 0.1em $blue;
 }
 
-.button:not(.button--selected-true):hover,
-.button:not(.button--selected-true):focus {
+.button:hover,
+.button:focus {
+  outline: none;
   background-color: $light-grey;
   color: white;
 }
