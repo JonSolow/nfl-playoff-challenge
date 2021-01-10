@@ -5,22 +5,22 @@ import Button from './Button';
 const WEEKS = [
   {
     name: 'Wild Card',
-    number: 18,
+    number: 1,
     disabled: false,
   },
   {
     name: 'Divisional',
-    number: 19,
+    number: 2,
     disabled: false,
   },
   {
     name: 'Conference',
-    number: 20,
+    number: 3,
     disabled: false,
   },
   {
     name: 'Super Bowl',
-    number: 22,
+    number: 4,
     disabled: false,
   },
   {
