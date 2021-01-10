@@ -3,10 +3,10 @@ import Roster from './Roster';
 import './User.scss'
 
 const WEEK_NAMES = {
-  18: 'Wild Card',
-  19: 'Divisional',
-  20: 'Conference',
-  22: 'Super Bowl',
+  1: 'Wild Card',
+  2: 'Divisional',
+  3: 'Conference',
+  4: 'Super Bowl',
   total: 'TOTAL',
 }
 
