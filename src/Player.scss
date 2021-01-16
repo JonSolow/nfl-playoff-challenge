@@ -58,7 +58,7 @@
 }
 
 .player__multiplier--2 {
-  background-color: silver;
+  background-color: $yellow;
   color: black;
   visibility: visible;
 }
@@ -137,6 +137,7 @@
 
   .player__multiplier {
     transform: translate(0.3em, -0.3em);
+    padding: 0.2em;
   }
 }
 
