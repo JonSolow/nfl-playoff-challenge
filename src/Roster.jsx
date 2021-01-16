@@ -53,6 +53,9 @@ function Roster({ roster }) {
         if (player_name === 'San Francisco 49ers') {
           playerName = 'San Fran. 49s';
         }
+        if (player_name === 'Clyde Edwards-Helaire') {
+          playerName = 'C. Edwards-Helaire';
+        }
         return <Player
           key={roster_slot}
           name={playerName}
