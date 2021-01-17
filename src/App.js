@@ -60,7 +60,7 @@ function App() {
       {
         loading
           ? <div className='loading'>Loading...</div>
-          : <Scoreboard selectedWeek={selectedWeek} weekUserData={get(userData, `${selectedWeek}`)} weekStats={get(stats, `${selectedWeek}`)} />
+          : <Scoreboard selectedWeek={selectedWeek} weekUserData={get(userData, `${selectedWeek}`)} gameStats={get(stats, [`${selectedWeek}`, 'team_games'], {})} />
       }
     </>
   );

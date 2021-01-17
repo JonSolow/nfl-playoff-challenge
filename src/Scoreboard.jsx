@@ -1,22 +1,9 @@
-import React, { useMemo, createContext } from 'react';
+import React from 'react';
 import User from './User';
 import './Scoreboard.scss';
 
-export const StatsContext = createContext();
-
-function StatsProvider(props) {
-
-  const { weekStats, children } = props;
-
-  const value = useMemo(() => ({
-    weekStats,
-  }), [weekStats])
-
-  return <StatsContext.Provider value={value}>{children}</StatsContext.Provider>
-}
-
 function Scoreboard(props) {
-  const { selectedWeek, weekUserData = [], weekStats = {} } = props;
+  const { selectedWeek, weekUserData = [], gameStats } = props;
 
   return (
     <ol className="scoreboard">
@@ -25,16 +12,15 @@ function Scoreboard(props) {
         const place = i + 1;
 
         return (
-          <StatsProvider key={user} weekStats={weekStats}>
-            <User
-              key={user}
-              username={user}
-              place={place}
-              selectedWeek={selectedWeek}
-              weekScore={week_score}
-              roster={roster}
-            />
-          </StatsProvider>
+          <User
+            key={user}
+            username={user}
+            place={place}
+            selectedWeek={selectedWeek}
+            weekScore={week_score}
+            roster={roster}
+            gameStats={gameStats}
+          />
         );
       })}
     </ol>

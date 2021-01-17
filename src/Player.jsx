@@ -1,30 +1,23 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import classNames from 'classnames';
-import get from 'lodash/get';
-import { StatsContext } from './Scoreboard';
 import './Player.scss';
 
 function Player(props) {
-  const { name, img, position, team, score, multiplier, isTotal } = props;
-  const { weekStats } = useContext(StatsContext);
+  const { name, img, position, team, score, multiplier, isTotal, teamGameStats = {} } = props;
+
   const playerClasses = classNames('player', { [`player--${team}`]: !!team });
   const multiplierClasses = classNames('player__multiplier', { [`player__multiplier--${multiplier}`]: !!multiplier });
 
-  const gameData = get(weekStats, ['team_games', `${team}`], {});
-  const homeScore = get(gameData, 'homeScore', '');
-  const awayScore = get(gameData, 'awayScore', '');
-  const homeTeam = get(gameData, 'homeTeamId', '');
-  const awayTeam = get(gameData, 'awayTeamId', '');
-  const clock = get(gameData, 'clock', '');
-  const quarter = get(gameData, 'quarter', '');
-  const status = get(gameData, 'status', '');
+  const { homeScore, awayScore, homeTeamId, awayTeamId, clock, quarter, status } = teamGameStats;
+
   const isActive = status === "active_game";
   const isPostGame = status === "post_game";
   const gameOver = status === 'game_closed';
-  const gameWinner = homeScore > awayScore ? homeTeam : awayTeam;
+
+  const gameWinner = homeScore > awayScore ? homeTeamId : awayTeamId;
   const teamStatus = gameOver ? `${team}` === gameWinner ? "Win" : "Loss" : "";
-  const teamScore = `${team}` === homeTeam ? homeScore : awayScore;
-  const oppScore = `${team}` === homeTeam ? awayScore : homeScore;
+  const teamScore = `${team}` === homeTeamId ? homeScore : awayScore;
+  const oppScore = `${team}` === homeTeamId ? awayScore : homeScore;
   const displayScores = `${teamScore}-${oppScore}`
 
   return (

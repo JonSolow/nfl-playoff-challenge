@@ -13,7 +13,7 @@ const ROSTER_SLOT_POSITIONS = {
   8: 'DEF',
 };
 
-function Roster({ roster, isTotal }) {
+function Roster({ roster, isTotal, gameStats }) {
   roster.sort((a, b) => {
     return parseInt(a.roster_slot) > parseInt(b.roster_slot)
       ? 1 : -1
@@ -22,7 +22,6 @@ function Roster({ roster, isTotal }) {
     <ul className="user__roster">
       {roster.map(player => {
         const { roster_slot, player_name, img_url, team, score, multiplier } = player;
-        let teamName = team;
         let playerName = player_name;
         if (player_name === 'San Francisco 49ers') {
           playerName = 'San Fran. 49s';
@@ -35,10 +34,11 @@ function Roster({ roster, isTotal }) {
           name={playerName}
           img={img_url}
           position={ROSTER_SLOT_POSITIONS[roster_slot]}
-          team={teamName}
+          team={team}
           score={score}
           multiplier={multiplier}
           isTotal={isTotal}
+          teamGameStats={gameStats[`${team}`]}
         />
       })}
     </ul>
