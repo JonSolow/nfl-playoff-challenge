@@ -22,9 +22,9 @@ function Player(props) {
   const isPostGame = status === "post_game";
   const gameOver = status === 'game_closed';
   const gameWinner = homeScore > awayScore ? homeTeam : awayTeam;
-  const teamStatus = gameOver ? `${team}` == gameWinner ? "Win" : "Loss" : "";
-  const teamScore = `${team}` == homeTeam ? homeScore : awayScore;
-  const oppScore = `${team}` == homeTeam ? awayScore : homeScore;
+  const teamStatus = gameOver ? `${team}` === gameWinner ? "Win" : "Loss" : "";
+  const teamScore = `${team}` === homeTeam ? homeScore : awayScore;
+  const oppScore = `${team}` === homeTeam ? awayScore : homeScore;
   const displayScores = `${teamScore}-${oppScore}`
 
   return (
