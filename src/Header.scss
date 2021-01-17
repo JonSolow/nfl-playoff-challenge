@@ -13,7 +13,7 @@
 .header__wrapper {
   max-width: 40em;
   width: 100%;
-  padding: $medium;
+  padding: $medium $medium 0 $medium;
   margin: 0 auto;
 }
 
@@ -33,6 +33,17 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: $medium;
+}
+
+.header__time {
+  font-size: 0.9rem;
+  margin-top: 1em;
+  text-align: right;
+  visibility: hidden;
+}
+
+.header__time--visible {
+  visibility: visible;
 }
 
 @media (min-width: 640px) {

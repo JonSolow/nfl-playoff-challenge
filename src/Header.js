@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import './Header.scss';
 import Button from './Button';
 
@@ -31,7 +32,8 @@ const WEEKS = [
 ];
 
 function Header(props) {
-  const { selectedWeek, setSelectedWeek } = props;
+  const { selectedWeek, setSelectedWeek, lastUpdatedTime } = props;
+
   return (
     <div className="header">
       <div className="header__wrapper">
@@ -53,6 +55,7 @@ function Header(props) {
             );
           })}
         </div>
+        <div className={classNames('header__time', { 'header__time--visible': !!lastUpdatedTime })}>{`Last updated: ${lastUpdatedTime}`}</div>
       </div>
     </div>
   );

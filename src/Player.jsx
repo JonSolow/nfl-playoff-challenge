@@ -1,10 +1,11 @@
 import React from 'react';
+import classNames from 'classnames';
 import './Player.scss';
 
 function Player(props) {
   const { name, img, position, team, score, multiplier } = props;
-  const playerClasses = `player player--${team}`
-  const multiplierClasses = `player__multiplier player__multiplier--${multiplier}`;
+  const playerClasses = classNames('player', { [`player--${team}`]: !!team });
+  const multiplierClasses = classNames('player__multiplier', { [`player__multiplier--${multiplier}`]: !!multiplier });
   return (
     <li className={playerClasses}>
       <div className="player__position">
