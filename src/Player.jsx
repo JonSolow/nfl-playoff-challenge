@@ -13,12 +13,16 @@ function Player(props) {
   const gameData = get(weekStats, ['team_games', `${team}`], {});
   const homeScore = get(gameData, 'homeScore', '');
   const awayScore = get(gameData, 'awayScore', '');
+  const homeTeam = get(gameData, 'homeTeam', '');
+  const awayTeam = get(gameData, 'awayTeam', '');
   const clock = get(gameData, 'clock', '');
   const quarter = get(gameData, 'quarter', '');
   const status = get(gameData, 'status', '');
   const isActive = status === "active_game";
   const isPostGame = status === "post_game";
   const gameOver = status === 'game_closed';
+  const gameWinner = homeScore > awayScore ? homeTeam : awayTeam;
+  const teamStatus = gameOver ? team == gameWinner ? "Win" : "Loss" : "";
 
   return (
     <li className={playerClasses}>
@@ -43,7 +47,7 @@ function Player(props) {
       <span className="player__game-stats">
         {isActive && `Q${quarter} ${clock}, ${awayScore}-${homeScore}`}
         {isPostGame && `Q4 0:00, ${awayScore}-${homeScore}`}
-        {gameOver && `Win, ${awayScore}-${homeScore}`}
+        {gameOver && `${teamStatus}, ${awayScore}-${homeScore}`}
         {name !== ' ' && !team && !isTotal && 'Bye'}
       </span>
     </li>
