@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import classNames from 'classnames';
+import { StatsContext } from './Scoreboard';
 import './Player.scss';
 
 function Player(props) {
   const { name, img, position, team, score, multiplier } = props;
+  const { weekStats } = useContext(StatsContext);
+
   const playerClasses = classNames('player', { [`player--${team}`]: !!team });
   const multiplierClasses = classNames('player__multiplier', { [`player__multiplier--${multiplier}`]: !!multiplier });
+
   return (
     <li className={playerClasses}>
       <div className="player__position">

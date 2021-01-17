@@ -1,5 +1,4 @@
 import React from 'react';
-import get from 'lodash//get';
 import Player from './Player';
 import './Roster.scss';
 
@@ -14,28 +13,6 @@ const ROSTER_SLOT_POSITIONS = {
   8: 'DEF',
 };
 
-const MISSING_TEAMS_FOR_PLAYERS = {
-  'Mark Ingram': 'BAL',
-  'Marquise Brown': 'BAL',
-  'Mark Andrews': 'BAL',
-  'Lamar Jackson': 'BAL',
-  'Travis Kelce': 'KC',
-  'Baltimore Ravens': 'BAL',
-  'Raheem Mostert': 'SF',
-  'Tyreek Hill': 'SF',
-  'Damien Williams': 'KC',
-  'Harrison Butker': 'KC',
-  'Deebo Samuel': 'SF',
-  'George Kittle': 'SF',
-  'San Francisco 49ers': 'SF',
-  'Justin Tucker': 'BAL',
-  'Aaron Jones': 'GB',
-  'Davante Adams': 'GB',
-  'Robbie Gould': 'SF',
-  'Jimmy Garoppolo': 'SF',
-  'Emmanuel Sanders': 'SF',
-}
-
 function Roster({ roster }) {
   roster.sort((a, b) => {
     return parseInt(a.roster_slot) > parseInt(b.roster_slot)
@@ -47,9 +24,6 @@ function Roster({ roster }) {
         const { roster_slot, player_name, img_url, team, score, multiplier } = player;
         let teamName = team;
         let playerName = player_name;
-        if (player_name !== ' ' && team === 'None') {
-          teamName = get(MISSING_TEAMS_FOR_PLAYERS, player_name, 'None');
-        }
         if (player_name === 'San Francisco 49ers') {
           playerName = 'San Fran. 49s';
         }

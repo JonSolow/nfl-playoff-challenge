@@ -31,14 +31,16 @@ function App() {
 
   const [loading, setLoading] = useState(true);
   const [selectedWeek, setSelectedWeek] = useState(CURRENT_WEEK);
-  const [data, setData] = useState();
+  const [userData, setUserData] = useState();
+  const [stats, setStats] = useState();
   const [lastUpdatedTime, setLastUpdatedTime] = useState();
 
   const fetchData = () => {
     return fetch(`${process.env.REACT_APP_BACKEND_URL}/api/?group=${process.env.REACT_APP_GROUP_ID}`)
       .then(response => response.json())
       .then(data => {
-        setData(get(data, ['response', 'users'], ''));
+        setUserData(get(data, ['response', 'users'], ''));
+        setStats(get(data, ['response', 'week_stats'], ''));
         setLastUpdatedTime(format(fromUnixTime(get(data, 'timestamp')), 'p'));
         setLoading(false);
       });
@@ -58,7 +60,7 @@ function App() {
       {
         loading
           ? <div className='loading'>Loading...</div>
-          : <Scoreboard selectedWeek={selectedWeek} weekData={get(data, `${selectedWeek}`)} />
+          : <Scoreboard selectedWeek={selectedWeek} weekUserData={get(userData, `${selectedWeek}`)} weekStats={get(stats, `${selectedWeek}`)} />
       }
     </>
   );
