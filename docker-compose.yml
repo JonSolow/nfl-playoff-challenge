@@ -1,0 +1,15 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  nfl-web:
+    env_file: .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - type: bind
+        source: ./src
+        target: /usr/src/app/src
+    environment:
+      - REACT_APP_BACKEND_URL=http://0.0.0.0:5000
