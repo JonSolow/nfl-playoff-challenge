@@ -13,8 +13,8 @@ function Player(props) {
   const gameData = get(weekStats, ['team_games', `${team}`], {});
   const homeScore = get(gameData, 'homeScore', '');
   const awayScore = get(gameData, 'awayScore', '');
-  const homeTeam = get(gameData, 'homeTeam', '');
-  const awayTeam = get(gameData, 'awayTeam', '');
+  const homeTeam = get(gameData, 'homeTeamId', '');
+  const awayTeam = get(gameData, 'awayTeamId', '');
   const clock = get(gameData, 'clock', '');
   const quarter = get(gameData, 'quarter', '');
   const status = get(gameData, 'status', '');
