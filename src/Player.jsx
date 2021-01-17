@@ -13,12 +13,19 @@ function Player(props) {
   const gameData = get(weekStats, ['team_games', `${team}`], {});
   const homeScore = get(gameData, 'homeScore', '');
   const awayScore = get(gameData, 'awayScore', '');
+  const homeTeam = get(gameData, 'homeTeamId', '');
+  const awayTeam = get(gameData, 'awayTeamId', '');
   const clock = get(gameData, 'clock', '');
   const quarter = get(gameData, 'quarter', '');
   const status = get(gameData, 'status', '');
   const isActive = status === "active_game";
   const isPostGame = status === "post_game";
   const gameOver = status === 'game_closed';
+  const gameWinner = homeScore > awayScore ? homeTeam : awayTeam;
+  const teamStatus = gameOver ? `${team}` === gameWinner ? "Win" : "Loss" : "";
+  const teamScore = `${team}` === homeTeam ? homeScore : awayScore;
+  const oppScore = `${team}` === homeTeam ? awayScore : homeScore;
+  const displayScores = `${teamScore}-${oppScore}`
 
   return (
     <li className={playerClasses}>
@@ -41,9 +48,9 @@ function Player(props) {
         {multiplier}X
       </span>
       <span className="player__game-stats">
-        {isActive && `Q${quarter} ${clock}, ${awayScore}-${homeScore}`}
-        {isPostGame && `Q4 0:00, ${awayScore}-${homeScore}`}
-        {gameOver && `Win, ${awayScore}-${homeScore}`}
+        {isActive && `Q${quarter} ${clock}, ${displayScores}`}
+        {isPostGame && `Q4 0:00, ${displayScores}`}
+        {gameOver && `${teamStatus}, ${displayScores}`}
         {name !== ' ' && !team && !isTotal && 'Bye'}
       </span>
     </li>
