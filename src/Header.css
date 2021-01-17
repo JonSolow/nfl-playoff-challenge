@@ -1,30 +1,28 @@
-@import './vars';
-
 .header {
-  font-family: $font-2;
+  font-family: var(--font-2);
   position: sticky;
   top: 0;
-  background-color: $medium-grey;
-  box-shadow: 0 $small $small $light-grey;
-  padding: $medium;
+  background-color: var(--medium-grey);
+  box-shadow: 0 var(--small) var(--small) var(--light-grey);
+  padding: var(--medium);
   z-index: 2;
 }
 
 .header__wrapper {
   max-width: 40em;
   width: 100%;
-  padding: $medium $medium 0 $medium;
+  padding: var(--medium) var(--medium) 0 var(--medium);
   margin: 0 auto;
 }
 
 .header__title {
-  background-color: $dark-grey;
+  background-color: var(--dark-grey);
   text-align: center;
   font-size: 2.5rem;
   padding: 1rem;
-  border-radius: $large;
+  border-radius: var(--large);
   margin-bottom: 0.3em;
-  box-shadow: 0 0 $small $lighter-grey;
+  box-shadow: 0 0 var(--small) var(--lighter-grey);
   line-height: 0.9;
 }
 
@@ -32,7 +30,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: $medium;
+  gap: var(--medium);
 }
 
 .header__time {

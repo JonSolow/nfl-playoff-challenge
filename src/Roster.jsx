@@ -1,6 +1,5 @@
 import React from 'react';
 import Player from './Player';
-import './Roster.scss';
 
 const ROSTER_SLOT_POSITIONS = {
   1: 'QB',

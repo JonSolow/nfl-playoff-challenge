@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import './Player.scss';
+import './Player.css';
 
 function Player(props) {
   const { name, img, position, team, score, multiplier, isTotal, teamGameStats = {} } = props;

@@ -1,6 +1,6 @@
 import React from 'react';
 import User from './User';
-import './Scoreboard.scss';
+import './Scoreboard.css';
 
 function Scoreboard(props) {
   const { selectedWeek, weekUserData = [], gameStats } = props;

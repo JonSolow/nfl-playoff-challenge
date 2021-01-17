@@ -1,10 +1,8 @@
-@import './vars.scss';
-
 .player {
-  border-radius: $large;
-  margin: $medium 0;
-  background-color: $light-grey;
-  padding: $medium;
+  border-radius: var(--large);
+  margin: var(--medium) 0;
+  background-color: var(--light-grey);
+  padding: var(--medium);
   display: grid;
   align-items: center;
   grid-template-columns: 2em 2em 2.5em auto 2em 2.5em;
@@ -15,10 +13,10 @@
 }
 
 .player__position {
-  font-family: $font-2;
+  font-family: var(--font-2);
   font-size: 1.2rem;
   grid-area: position;
-  padding-left: $small;
+  padding-left: var(--small);
 }
 
 .player__image {
@@ -30,7 +28,7 @@
 
 .player__img {
   transform: translateY(5px);
-  filter: drop-shadow(0px 0px 1px $lighter-grey);
+  filter: drop-shadow(0px 0px 1px var(--lighter-grey));
 }
 
 .player__name {
@@ -46,7 +44,7 @@
 }
 
 .player__multiplier {
-  font-family: $font-3;
+  font-family: var(--font-3);
   grid-area: multiplier;
   justify-self: end;
   font-size: 0.8rem;
@@ -58,7 +56,7 @@
 }
 
 .player__multiplier--2 {
-  background-color: $yellow;
+  background-color: var(--yellow);
   color: black;
   visibility: visible;
 }
@@ -75,7 +73,7 @@
 }
 
 .player__score {
-  font-family: $font-3;
+  font-family: var(--font-3);
   font-size: 1.2rem;
   grid-area: score;
   justify-self: end;
@@ -118,7 +116,7 @@
     background-color: rgba(221, 221, 221, 0.9);
     color: black;
     border-radius: 0.3rem;
-    padding: $small;
+    padding: var(--small);
     overflow-wrap: break-word;
     margin: 0.3em 0;
     box-shadow: 0 0 2px 1px white;
@@ -135,11 +133,11 @@
 
   .player__score {
     font-weight: 700;
-    margin: 0.1em $small;
+    margin: 0.1em var(--small);
   }
 
   .player__team {
-    margin: $medium $small;
+    margin: var(--medium) var(--small);
   }
 
   .player__multiplier {

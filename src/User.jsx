@@ -1,6 +1,6 @@
 import React from 'react';
 import Roster from './Roster';
-import './User.scss'
+import './User.css'
 
 const WEEK_NAMES = {
   1: 'Wild Card',

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import get from 'lodash/get';
 import fromUnixTime from 'date-fns/fromUnixTime';
 import format from 'date-fns/format';
-import './App.scss'
+import './App.css'
 import Header from './Header';
 import Scoreboard from './Scoreboard';
 
