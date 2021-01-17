@@ -39,6 +39,11 @@
   font-size: 0.75rem;
   margin-top: 1em;
   text-align: right;
+  visibility: hidden;
+}
+
+.header__time--visible {
+  visibility: visible;
 }
 
 @media (min-width: 640px) {

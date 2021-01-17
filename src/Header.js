@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import './Header.scss';
 import Button from './Button';
 
@@ -54,7 +55,7 @@ function Header(props) {
             );
           })}
         </div>
-        <div className="header__time">{`Last updated: ${lastUpdatedTime}`}</div>
+        <div className={classNames('header__time', { 'header__time--visible': !!lastUpdatedTime })}>{`Last updated: ${lastUpdatedTime}`}</div>
       </div>
     </div>
   );
