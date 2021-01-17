@@ -13,26 +13,3 @@ services:
         target: /usr/src/app/src
     environment:
       - REACT_APP_BACKEND_URL=http://0.0.0.0:5000
-    # environment:
-    #   - PORT=${PORT}
-
-  # dev:
-  #   user: "${UID}:${GID}"
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #     target: development
-  #   depends_on:
-  #     - "web"
-  #   volumes:
-  #     - type: bind
-  #       source: ./service
-  #       target: /opt/service
-  #       consistency: cached
-  #     - type: bind
-  #       source: ./tests
-  #       target: /opt/tests
-  #       consistency: cached
-  #     - ${PWD}/poetry.lock:/opt/pysetup/poetry.lock
-  #     - ${PWD}/pyproject.toml:/opt/pysetup/pyproject.toml
-
