@@ -1,9 +1,7 @@
-@import './vars';
-
 .user {
-  border-radius: $large;
-  margin: $medium $small;
-  background-color: $dark-grey;
+  border-radius: var(--large);
+  margin: var(--medium) var(--small);
+  background-color: var(--dark-grey);
   box-shadow: 0 0 0.1em 0.1em white;
   padding: 1em;
   display: grid;
@@ -17,7 +15,7 @@
 
 .user__place {
   font-size: 1.5rem;
-  font-family: $font-3;
+  font-family: var(--font-3);
   font-weight: 700;
   grid-area: place;
   justify-self: left;
@@ -38,7 +36,7 @@
 }
 
 .user__score-number {
-  font-family: $font-3;
+  font-family: var(--font-3);
   font-size: 1.25rem;
   font-weight: 700;
   padding: 0.1em 0.25em;
@@ -46,13 +44,13 @@
   justify-self: end;
   width: 2.3em;
   text-align: right;
-  box-shadow: 0 0 0.1em 0.05em $yellow;
-  border-radius: $small;
+  box-shadow: 0 0 0.1em 0.05em var(--yellow);
+  border-radius: var(--small);
   line-height: 1;
 }
 
 .user__roster {
-  margin-top: $small;
+  margin-top: var(--small);
   grid-area: roster;
 }
 
@@ -82,7 +80,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: $medium;
+    gap: var(--medium);
     margin-top: 1em;
   }
 }

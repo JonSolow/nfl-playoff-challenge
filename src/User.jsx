@@ -1,6 +1,6 @@
 import React from 'react';
 import Roster from './Roster';
-import './User.scss'
+import './User.css'
 
 const WEEK_NAMES = {
   1: 'Wild Card',
@@ -11,7 +11,7 @@ const WEEK_NAMES = {
 }
 
 function User(props) {
-  const { username, place, selectedWeek, weekScore, roster } = props;
+  const { username, place, selectedWeek, weekScore, roster, gameStats } = props;
   return (
     <li className="user">
       <span className="user__place">{place}</span>
@@ -22,7 +22,7 @@ function User(props) {
       <span className="user__score-number">
         {weekScore}
       </span>
-      <Roster roster={roster} />
+      <Roster roster={roster} isTotal={selectedWeek === 'total'} gameStats={gameStats} />
     </li>
   );
 }

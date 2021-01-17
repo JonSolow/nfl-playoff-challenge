@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import './Header.scss';
+import './Header.css';
 import Button from './Button';
 
 const WEEKS = [
