@@ -3,7 +3,7 @@ import User from './User';
 import './Scoreboard.css';
 
 function Scoreboard(props) {
-  const { selectedWeek, weekUserData = [], gameStats } = props;
+  const { selectedWeek, weekUserData = [], gameStats, playerStats } = props;
 
   return (
     <ol className="scoreboard">
@@ -20,6 +20,7 @@ function Scoreboard(props) {
             weekScore={week_score}
             roster={roster}
             gameStats={gameStats}
+            playerStats={playerStats}
           />
         );
       })}

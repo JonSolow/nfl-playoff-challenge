@@ -11,7 +11,7 @@ const WEEK_NAMES = {
 }
 
 function User(props) {
-  const { username, place, selectedWeek, weekScore, roster, gameStats } = props;
+  const { username, place, selectedWeek, weekScore, roster, gameStats, playerStats } = props;
   return (
     <li className="user">
       <span className="user__place">{place}</span>
@@ -22,7 +22,7 @@ function User(props) {
       <span className="user__score-number">
         {weekScore}
       </span>
-      <Roster roster={roster} isTotal={selectedWeek === 'total'} gameStats={gameStats} />
+      <Roster roster={roster} isTotal={selectedWeek === 'total'} gameStats={gameStats} playerStats={playerStats} />
     </li>
   );
 }
