@@ -1,6 +1,22 @@
 import React from 'react';
 import classNames from 'classnames';
+import get from 'lodash/get';
 import './Player.css';
+
+const MISSING_TEAM_NAMES = {
+  'Aaron Rodgers': 'GB',
+  'Aaron Jones': 'GB',
+  'Travis Kelce': 'KC',
+  'Davante Adams': 'GB',
+  'Robert Tonyan': 'GB',
+  'Mason Crosby': 'GB',
+  'Green Bay Packers': 'GB',
+  'Patrick Mahomes': 'KC',
+  'C. Edwards-Helaire': 'KC',
+  'Tyreek Hill': 'KC',
+  'Kansas City Chiefs': 'KC',
+  'Harrison Butker': 'KC',
+};
 
 function Player(props) {
   const { name, img, position, team, score, multiplier, isTotal, teamGameStats = {} } = props;
@@ -10,6 +26,8 @@ function Player(props) {
 
   const { homeScore, awayScore, homeTeamId, awayTeamId, clock, quarter, status } = teamGameStats;
 
+  const isBye = !team && name && name !== ' ';
+  const isPreGame = status === "pre_game";
   const isActive = status === "active_game";
   const isPostGame = status === "post_game";
   const gameOver = status === 'game_closed';
@@ -18,7 +36,12 @@ function Player(props) {
   const teamStatus = gameOver ? `${team}` === gameWinner ? "Win" : "Loss" : "";
   const teamScore = `${team}` === homeTeamId ? homeScore : awayScore;
   const oppScore = `${team}` === homeTeamId ? awayScore : homeScore;
-  const displayScores = `${teamScore}-${oppScore}`
+  const displayScores = `${teamScore}-${oppScore}`;
+
+  let teamName = team;
+  if (isBye) {
+    teamName = get(MISSING_TEAM_NAMES, `${name}`, '');
+  }
 
   return (
     <li className={playerClasses}>
@@ -32,7 +55,7 @@ function Player(props) {
         {name}
       </div>
       <div className="player__team">
-        {team}
+        {teamName}
       </div>
       <span className="player__score">
         {score}
@@ -40,11 +63,14 @@ function Player(props) {
       <span className={multiplierClasses}>
         {multiplier}X
       </span>
-      <span className="player__game-stats">
-        {isActive && `Q${quarter} ${clock}, ${displayScores}`}
-        {isPostGame && `Q4 0:00, ${displayScores}`}
-        {gameOver && `${teamStatus}, ${displayScores}`}
-        {name !== ' ' && !team && !isTotal && 'Bye'}
+      <span className="player__game-status">
+        {(isPreGame || isActive) && `Q${quarter} ${clock}`}
+        {isPostGame && 'Q4 0:00'}
+        {gameOver && `${teamStatus}`}
+        {!isTotal && isBye && 'Bye'}
+      </span>
+      <span className="player__game-score">
+        {(isPreGame || isActive || isPostGame || gameOver) && `${displayScores}`}
       </span>
     </li>
   );
