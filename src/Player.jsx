@@ -22,7 +22,7 @@ function Player(props) {
   const isPostGame = status === "post_game";
   const gameOver = status === 'game_closed';
   const gameWinner = homeScore > awayScore ? homeTeam : awayTeam;
-  const teamStatus = gameOver ? team == gameWinner ? "Win" : "Loss" : "";
+  const teamStatus = gameOver ? `${team}` == gameWinner ? "Win" : "Loss" : "";
 
   return (
     <li className={playerClasses}>
