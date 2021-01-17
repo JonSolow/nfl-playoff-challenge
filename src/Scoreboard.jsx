@@ -1,13 +1,13 @@
 import React from 'react';
 import User from './User';
-import './Scoreboard.scss';
+import './Scoreboard.css';
 
 function Scoreboard(props) {
-  const { selectedWeek, weekData = [] } = props;
+  const { selectedWeek, weekUserData = [], gameStats } = props;
 
   return (
     <ol className="scoreboard">
-      {weekData.map((userData, i) => {
+      {weekUserData.map((userData, i) => {
         const { roster, user, week_score } = userData;
         const place = i + 1;
 
@@ -19,6 +19,7 @@ function Scoreboard(props) {
             selectedWeek={selectedWeek}
             weekScore={week_score}
             roster={roster}
+            gameStats={gameStats}
           />
         );
       })}
