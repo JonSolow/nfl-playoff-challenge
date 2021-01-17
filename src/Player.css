@@ -5,7 +5,7 @@
   padding: var(--medium);
   display: grid;
   align-items: center;
-  grid-template-columns: 2em 2em 2.5em 5em auto 2em 2.5em;
+  grid-template-columns: 2em 2em 2.5em 5.5em auto 2em 2.5em;
   grid-template-rows: auto;
   grid-template-areas: 
     "position image player player player multiplier score"
@@ -86,8 +86,7 @@
 
 .player__game-status {
   grid-area: game-status;
-  text-align: right;
-  padding-right: var(--medium);
+  padding-left: var(--large);
 }
 
 .player__game-score {
@@ -152,10 +151,6 @@
   .player__multiplier {
     transform: translate(0.3em, -0.3em);
     padding: 0.2em;
-  }
-
-  .player__game-status {
-    text-align: left;
   }
 
   .player__game-score {
