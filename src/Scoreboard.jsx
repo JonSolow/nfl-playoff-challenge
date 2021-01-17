@@ -1,5 +1,4 @@
 import React, { useMemo, createContext } from 'react';
-import get from 'lodash/get';
 import User from './User';
 import './Scoreboard.scss';
 

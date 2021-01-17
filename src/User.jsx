@@ -22,7 +22,7 @@ function User(props) {
       <span className="user__score-number">
         {weekScore}
       </span>
-      <Roster roster={roster} />
+      <Roster roster={roster} isTotal={selectedWeek === 'total'} />
     </li>
   );
 }

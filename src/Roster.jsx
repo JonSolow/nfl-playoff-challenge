@@ -13,7 +13,7 @@ const ROSTER_SLOT_POSITIONS = {
   8: 'DEF',
 };
 
-function Roster({ roster }) {
+function Roster({ roster, isTotal }) {
   roster.sort((a, b) => {
     return parseInt(a.roster_slot) > parseInt(b.roster_slot)
       ? 1 : -1
@@ -38,6 +38,7 @@ function Roster({ roster }) {
           team={teamName}
           score={score}
           multiplier={multiplier}
+          isTotal={isTotal}
         />
       })}
     </ul>

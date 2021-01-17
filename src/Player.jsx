@@ -1,14 +1,24 @@
 import React, { useContext } from 'react';
 import classNames from 'classnames';
+import get from 'lodash/get';
 import { StatsContext } from './Scoreboard';
 import './Player.scss';
 
 function Player(props) {
-  const { name, img, position, team, score, multiplier } = props;
+  const { name, img, position, team, score, multiplier, isTotal } = props;
   const { weekStats } = useContext(StatsContext);
-
   const playerClasses = classNames('player', { [`player--${team}`]: !!team });
   const multiplierClasses = classNames('player__multiplier', { [`player__multiplier--${multiplier}`]: !!multiplier });
+
+  const gameData = get(weekStats, ['team_games', `${team}`], {});
+  const homeScore = get(gameData, 'homeScore', '');
+  const awayScore = get(gameData, 'awayScore', '');
+  const clock = get(gameData, 'clock', '');
+  const quarter = get(gameData, 'quarter', '');
+  const status = get(gameData, 'status', '');
+  const isActive = status === "active_game";
+  const isPostGame = status === "post_game";
+  const gameOver = status === 'game_closed';
 
   return (
     <li className={playerClasses}>
@@ -29,6 +39,12 @@ function Player(props) {
       </span>
       <span className={multiplierClasses}>
         {multiplier}X
+      </span>
+      <span className="player__game-stats">
+        {isActive && `Q${quarter} ${clock}, ${awayScore}-${homeScore}`}
+        {isPostGame && `Q4 0:00, ${awayScore}-${homeScore}`}
+        {gameOver && `Win, ${awayScore}-${homeScore}`}
+        {name !== ' ' && !team && !isTotal && 'Bye'}
       </span>
     </li>
   );
