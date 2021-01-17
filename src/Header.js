@@ -31,7 +31,8 @@ const WEEKS = [
 ];
 
 function Header(props) {
-  const { selectedWeek, setSelectedWeek } = props;
+  const { selectedWeek, setSelectedWeek, lastUpdatedTime } = props;
+
   return (
     <div className="header">
       <div className="header__wrapper">
@@ -53,6 +54,7 @@ function Header(props) {
             );
           })}
         </div>
+        <div className="header__time">{`Last updated: ${lastUpdatedTime}`}</div>
       </div>
     </div>
   );
