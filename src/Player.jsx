@@ -10,6 +10,7 @@ function Player(props) {
 
   const { homeScore, awayScore, homeTeamId, awayTeamId, clock, quarter, status } = teamGameStats;
 
+  const isPreGame = status === "pre_game";
   const isActive = status === "active_game";
   const isPostGame = status === "post_game";
   const gameOver = status === 'game_closed';
@@ -41,7 +42,7 @@ function Player(props) {
         {multiplier}X
       </span>
       <span className="player__game-stats">
-        {isActive && `Q${quarter} ${clock}, ${displayScores}`}
+        {(isActive || isPreGame) && `Q${quarter} ${clock}, ${displayScores}`}
         {isPostGame && `Q4 0:00, ${displayScores}`}
         {gameOver && `${teamStatus}, ${displayScores}`}
         {name !== ' ' && !team && !isTotal && 'Bye'}
