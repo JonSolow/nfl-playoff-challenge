@@ -153,6 +153,10 @@
     padding: 0.2em;
   }
 
+  .player__game-status {
+    padding-left: 0;
+  }
+
   .player__game-score {
     text-align: right;
   }
