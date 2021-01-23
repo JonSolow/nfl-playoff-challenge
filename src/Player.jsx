@@ -20,7 +20,7 @@ const MISSING_TEAM_NAMES = {
 };
 
 function Player(props) {
-  const { name, img, position, team, score, multiplier, isTotal, teamGameStats, playerStats = {} } = props;
+  const { name, img, position, team, score, multiplier, isTotal, teamGameStats = {}, playerStats = {} } = props;
 
   const playerClasses = classNames('player', { [`player--${team}`]: !!team });
   const multiplierClasses = classNames('player__multiplier', { [`player__multiplier--${multiplier}`]: !!multiplier });
