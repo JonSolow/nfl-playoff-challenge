@@ -78,7 +78,6 @@ function Player(props) {
       <div>
         <PlayerStats
             playerStats={playerStats}
-            position={position}
           />
       </div>
     </li>

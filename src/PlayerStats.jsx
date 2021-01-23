@@ -13,7 +13,7 @@ function RenderStat(props) {
 }
 
 function PlayerStats(props) {
-  const { playerStats, position = {} } = props;
+  const { playerStats = {} } = props;
   const pTD = get(playerStats, 'PTD', '')
   const pYd = get(playerStats, 'PYd', '')
   const pInt = get(playerStats, 'INT', '')
