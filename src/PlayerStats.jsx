@@ -1,8 +1,12 @@
 import React from 'react';
-// import classNames from 'classnames';
 import get from 'lodash/get';
-
 import './PlayerStats.css';
+
+const STATMAPPING = {
+    'DefINT': 'INT',
+    'DefTD': 'TD',
+    'DefFum': 'FUM'
+}
 
 function RenderStat(props) {
     const { statKey, statValue = {} } = props;
@@ -21,7 +25,7 @@ function PlayerStats(props) {
             {statArray.map(statPair => {
                 const [statKey, statValue] = statPair;
                 return <RenderStat
-                    statKey={statKey}
+                    statKey={get(STATMAPPING, `${statKey}`, statKey)}
                     statValue={statValue}
                 ></RenderStat>
             })}
