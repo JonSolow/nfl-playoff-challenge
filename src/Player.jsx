@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PlayerStats from './PlayerStats';
 import get from 'lodash/get';
 import './Player.css';
 
@@ -19,7 +20,7 @@ const MISSING_TEAM_NAMES = {
 };
 
 function Player(props) {
-  const { name, img, position, team, score, multiplier, isTotal, teamGameStats = {} } = props;
+  const { name, img, position, team, score, multiplier, isTotal, teamGameStats, playerStats = {} } = props;
 
   const playerClasses = classNames('player', { [`player--${team}`]: !!team });
   const multiplierClasses = classNames('player__multiplier', { [`player__multiplier--${multiplier}`]: !!multiplier });
@@ -72,6 +73,12 @@ function Player(props) {
       <span className="player__game-score">
         {(isPreGame || isActive || isPostGame || gameOver) && `${displayScores}`}
       </span>
+      <div>
+        <PlayerStats
+            playerStats={playerStats}
+            position={position}
+          />
+      </div>
     </li>
   );
 }
