@@ -1,92 +1,92 @@
 .user {
-  border-radius: var(--large);
-  margin: var(--medium) var(--small);
-  background-color: var(--dark-grey);
-  box-shadow: 0 0 0.1em 0.1em white;
-  padding: 1em;
-  display: grid;
-  align-items: center;
-  grid-template-columns: 2.5em auto 4em;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "place username score"
-    "roster roster roster";
+	border-radius: var(--large);
+	margin: var(--medium) var(--small);
+	background-color: var(--dark-grey);
+	box-shadow: 0 0 0.1em 0.1em white;
+	padding: 1em;
+	display: grid;
+	align-items: center;
+	grid-template-columns: 2.5em auto 4em;
+	grid-template-rows: auto;
+	grid-template-areas:
+		'place username score'
+		'roster roster roster';
 }
 
 .user__place {
-  font-size: 1.5rem;
-  font-family: var(--font-3);
-  font-weight: 700;
-  grid-area: place;
-  justify-self: left;
+	font-size: 1.5rem;
+	font-family: var(--font-3);
+	font-weight: 700;
+	grid-area: place;
+	justify-self: left;
 }
 
 .user__username {
-  grid-area: username;
-  font-weight: 100;
-  font-size: 1.2rem;
+	grid-area: username;
+	font-weight: 100;
+	font-size: 1.2rem;
 }
 
 .user__score-type {
-  display: none;
-  font-size: 1.2rem;
-  font-weight: 100;
-  justify-self: end;
-  margin-right: 4em;
+	display: none;
+	font-size: 1.2rem;
+	font-weight: 100;
+	justify-self: end;
+	margin-right: 4em;
 }
 
 .user__score-number {
-  font-family: var(--font-3);
-  font-size: 1.25rem;
-  font-weight: 700;
-  padding: 0.1em 0.25em;
-  grid-area: score;
-  justify-self: end;
-  width: 2.3em;
-  text-align: right;
-  box-shadow: 0 0 0.1em 0.05em var(--yellow);
-  border-radius: var(--small);
-  line-height: 1;
+	font-family: var(--font-3);
+	font-size: 1.25rem;
+	font-weight: 700;
+	padding: 0.1em 0.25em;
+	grid-area: score;
+	justify-self: end;
+	width: 2.3em;
+	text-align: right;
+	box-shadow: 0 0 0.1em 0.05em var(--yellow);
+	border-radius: var(--small);
+	line-height: 1;
 }
 
 .user__roster {
-  margin-top: var(--small);
-  grid-area: roster;
+	margin-top: var(--small);
+	grid-area: roster;
 }
 
 @media (min-width: 640px) {
-  .user {
-    grid-template-columns: 2.5em auto 12em;
-    max-width: 41em;
-    margin-left: auto;
-    margin-right: auto;
-  }
+	.user {
+		grid-template-columns: 2.5em auto 12em;
+		max-width: 41em;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
-  .user__place,
-  .user__score-number {
-    font-size: 1.8rem;
-  }
+	.user__place,
+	.user__score-number {
+		font-size: 1.8rem;
+	}
 
-  .user__username {
-    font-size: 1.7rem;
-  }
+	.user__username {
+		font-size: 1.7rem;
+	}
 
-  .user__score-type {
-    display: block;
-    grid-area: score;
-  }
+	.user__score-type {
+		display: block;
+		grid-area: score;
+	}
 
-  .user__roster {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--medium);
-    margin-top: 1em;
-  }
+	.user__roster {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: var(--medium);
+		margin-top: 1em;
+	}
 }
 
 @media (min-width: 1130px) {
-  .user {
-    max-width: 100%;
-  }
+	.user {
+		max-width: 100%;
+	}
 }
