@@ -7,7 +7,7 @@ import Header from './Header';
 import Scoreboard from './Scoreboard';
 
 const CURRENT_WEEK = 3;
-const TWO_MINUTES = 120000;
+const ONE_MINUTE = 60000;
 
 function useInterval(callback, delay) {
 	const savedCallback = useRef();
@@ -51,7 +51,7 @@ function App() {
 
 	useInterval(() => {
 		fetchData();
-	}, TWO_MINUTES);
+	}, ONE_MINUTE);
 
 	return (
 		<>
