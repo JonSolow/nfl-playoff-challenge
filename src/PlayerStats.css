@@ -1,13 +1,37 @@
-.stats {
-	font-size: 0.6rem;
-	width: 1.9rem;
+.player-stats {
+	grid-area: stats;
+	align-self: start;
+	margin-top: var(--small);
+	margin-left: var(--medium);
+	display: flex;
 }
 
+.stat {
+	font-size: 0.6rem;
+	width: 2.5rem;
+}
 
-.statsList {
-	margin-top: 0.25rem;
-	height: 2rem;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
+.stat__key,
+.stat__value {
+	display: inline;
+}
+
+.stat__value {
+	margin-left: var(--small);
+}
+
+@media (min-width: 640px) {
+	.player-stats,
+	.stat__value {
+		margin-left: 0;
+	}
+
+	.stat {
+		width: 1.9rem;
+	}
+
+	.stat__key {
+		display: block;
+		margin-left: 0;
+	}
 }

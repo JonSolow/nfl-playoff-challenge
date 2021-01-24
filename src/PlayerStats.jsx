@@ -5,32 +5,31 @@ import './PlayerStats.css';
 const STATMAPPING = {
 	DefINT: 'INT',
 	DefTD: 'TD',
-    DefFum: 'FUM',
-    PtsAllow: 'Pts',
-    'FG 0-49': 'FG <50'
+	DefFum: 'FUM',
+	PtsAllow: 'Pts',
+	'FG 0-49': '<50',
+	'FG 50+': '50+',
 };
 
 function RenderStat(props) {
 	const { statKey, statValue } = props;
 	return (
-		statValue !== '' && (
-			<li className="stats">
-				{' '}
-				{statKey}<br></br> {statValue}{' '}
-			</li>
-		)
+		<li className="stat">
+			<div className="stat__key">{statKey}</div>
+			<div className="stat__value">{statValue}</div>
+		</li>
 	);
 }
 
 function PlayerStats(props) {
 	const { playerStats } = props;
-	const statArray = Object.entries(playerStats);
+	const statArray = Object.entries(playerStats).slice(0, 4);
 
 	return (
-		<ul className="statsList">
+		<ul className="player-stats">
 			{statArray.map(statPair => {
 				const [statKey, statValue] = statPair;
-				return <RenderStat statKey={get(STATMAPPING, `${statKey}`, statKey)} statValue={statValue} />;
+				return <RenderStat key={statKey} statKey={get(STATMAPPING, `${statKey}`, statKey)} statValue={statValue} />;
 			})}
 		</ul>
 	);
