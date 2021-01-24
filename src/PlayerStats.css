@@ -4,6 +4,7 @@
 	margin-top: var(--small);
 	margin-left: var(--medium);
 	display: flex;
+	justify-content: space-evenly;
 }
 
 .stat {
@@ -21,6 +22,10 @@
 }
 
 @media (min-width: 640px) {
+	.player-stats {
+		justify-content: unset;
+	}
+
 	.player-stats,
 	.stat__value {
 		margin-left: 0;
