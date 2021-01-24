@@ -1,3 +1,13 @@
 .stats {
 	font-size: 0.6rem;
+	width: 1.9rem;
+}
+
+
+.statsList {
+	margin-top: 0.25rem;
+	height: 2rem;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 }

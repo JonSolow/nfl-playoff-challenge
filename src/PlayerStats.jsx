@@ -5,17 +5,19 @@ import './PlayerStats.css';
 const STATMAPPING = {
 	DefINT: 'INT',
 	DefTD: 'TD',
-	DefFum: 'FUM',
+    DefFum: 'FUM',
+    PtsAllow: 'Pts',
+    'FG 0-49': 'FG <50'
 };
 
 function RenderStat(props) {
 	const { statKey, statValue } = props;
 	return (
 		statValue !== '' && (
-			<span className="stats">
+			<li className="stats">
 				{' '}
-				{statKey}: {statValue}{' '}
-			</span>
+				{statKey}<br></br> {statValue}{' '}
+			</li>
 		)
 	);
 }
@@ -25,12 +27,12 @@ function PlayerStats(props) {
 	const statArray = Object.entries(playerStats);
 
 	return (
-		<div>
+		<ul className="statsList">
 			{statArray.map(statPair => {
 				const [statKey, statValue] = statPair;
 				return <RenderStat statKey={get(STATMAPPING, `${statKey}`, statKey)} statValue={statValue} />;
 			})}
-		</div>
+		</ul>
 	);
 }
 
