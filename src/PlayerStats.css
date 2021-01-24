@@ -4,7 +4,7 @@
 	margin-top: var(--small);
 	margin-left: var(--medium);
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 }
 
 .stat {
@@ -29,10 +29,6 @@
 	.player-stats,
 	.stat__value {
 		margin-left: 0;
-	}
-
-	.stat {
-		width: 1.9rem;
 	}
 
 	.stat__key {

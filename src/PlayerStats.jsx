@@ -24,12 +24,17 @@ function RenderStat(props) {
 function PlayerStats(props) {
 	const { playerStats } = props;
 	const statArray = Object.entries(playerStats).slice(0, 4);
+	while (statArray.length > 0 && statArray.length < 4) {
+		statArray.push([]);
+	}
 
 	return (
 		<ul className="player-stats">
-			{statArray.map(statPair => {
+			{statArray.map((statPair, i) => {
 				const [statKey, statValue] = statPair;
-				return <RenderStat key={statKey} statKey={get(STATMAPPING, `${statKey}`, statKey)} statValue={statValue} />;
+				return (
+					<RenderStat key={statKey || i} statKey={get(STATMAPPING, `${statKey}`, statKey)} statValue={statValue} />
+				);
 			})}
 		</ul>
 	);
