@@ -1,53 +1,53 @@
 .button {
-  position: relative;
-  font-size: 1rem; 
-  padding: 0.5em;
-  border: none;
-  background: none;
-  border-radius: 3em;
-  margin: 0.1em;
-  background-color: var(--lighter-grey);
-  cursor: pointer;
-  font-family: var(--font-1);
-  flex: 1 1 18%;
-  min-width: 7em;
-  box-shadow: -0.1em 0.1em 0.1em var(--lightest-grey);
-  transition: color 0.2s ease, background-color 0.2s ease;
+	position: relative;
+	font-size: 1rem;
+	padding: 0.5em;
+	border: none;
+	background: none;
+	border-radius: 3em;
+	margin: 0.1em;
+	background-color: var(--lighter-grey);
+	cursor: pointer;
+	font-family: var(--font-1);
+	flex: 1 1 18%;
+	min-width: 7em;
+	box-shadow: -0.1em 0.1em 0.1em var(--lightest-grey);
+	transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .button[disabled] {
-  background-color: var(--lightest-grey);
-  color: var(--lighter-grey);
+	background-color: var(--lightest-grey);
+	color: var(--lighter-grey);
 }
 
 .button--selected-true {
-  background-color: var(--light-grey);
-  color: white;
-  box-shadow: -0.1em 0.1em 0.1em var(--blue);
+	background-color: var(--light-grey);
+	color: white;
+	box-shadow: -0.1em 0.1em 0.1em var(--blue);
 }
 
 .button:hover,
 .button:focus {
-  outline: none;
-  background-color: var(--light-grey);
-  color: white;
+	outline: none;
+	background-color: var(--light-grey);
+	color: white;
 }
 
 .button::after,
 .button::after {
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  border-radius: 3em;
-  box-shadow: -var(--small) var(--small )var(--medium) var(--blue);
-  opacity: 0;
-  transition: opacity 0.2s ease;
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	border-radius: 3em;
+	box-shadow: -var(--small) var(--small) var(--medium) var(--blue);
+	opacity: 0;
+	transition: opacity 0.2s ease;
 }
 
 .button:hover::after,
 .button:focus::after {
-  opacity: 1;
+	opacity: 1;
 }

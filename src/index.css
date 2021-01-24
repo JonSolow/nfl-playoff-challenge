@@ -1,37 +1,38 @@
 :root {
-  --lightest-grey: #dddddd;
-  --lighter-grey: #909090;
-  --light-grey: #505050;
-  --medium-grey: #282828;
-  --dark-grey:  #101010;
-  --blue: #0965BB;
-  --yellow: #F4D03F;
-  --small: 0.2em;
-  --medium: 0.5em;
-  --large: 1em;
-  --font-1: 'Poppins', sans-serif;
-  --font-2: 'Staatliches', cursive;
-  --font-3: 'Kameron', serif;
+	--lightest-grey: #dddddd;
+	--lighter-grey: #909090;
+	--light-grey: #505050;
+	--medium-grey: #282828;
+	--dark-grey: #101010;
+	--blue: #0965bb;
+	--yellow: #f4d03f;
+	--small: 0.2em;
+	--medium: 0.5em;
+	--large: 1em;
+	--font-1: 'Poppins', sans-serif;
+	--font-2: 'Staatliches', cursive;
+	--font-3: 'Kameron', serif;
 }
 
 * {
-  box-sizing: border-box
+	box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: var(--font-1);
-  font-size: 1rem;
-  line-height: 1.2;
-  background-color: var(--medium-grey);
-  color: #fff;
+	margin: 0;
+	font-family: var(--font-1);
+	font-size: 1rem;
+	line-height: 1.2;
+	background-color: var(--medium-grey);
+	color: #fff;
 }
 
 img {
-  max-width: 100%;
+	max-width: 100%;
 }
 
-ul, ol {
-  list-style-type: none;
-  padding-left: 0;
+ul,
+ol {
+	list-style-type: none;
+	padding-left: 0;
 }

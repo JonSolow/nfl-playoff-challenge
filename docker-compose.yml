@@ -1,4 +1,4 @@
-version: "3.9"  # optional since v1.27.0
+version: '3.9' # optional since v1.27.0
 services:
   nfl-web:
     env_file: .env
@@ -13,3 +13,9 @@ services:
         target: /usr/src/app/src
     environment:
       - REACT_APP_BACKEND_URL=http://0.0.0.0:5000
+  nfl-api:
+    image: nfl-playoff-challenge-api_web
+    ports:
+      - 5000:5000
+    environment:
+      - PORT=5000

@@ -1,0 +1,42 @@
+.player-stats {
+	grid-area: stats;
+	align-self: start;
+	margin-top: var(--small);
+	margin-left: var(--medium);
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.stat {
+	font-size: 0.6rem;
+	width: 2.5rem;
+}
+
+.stat__key,
+.stat__value {
+	display: inline;
+}
+
+.stat__value {
+	margin-left: var(--small);
+}
+
+@media (min-width: 640px) {
+	.player-stats {
+		justify-content: unset;
+	}
+
+	.player-stats,
+	.stat__value {
+		margin-left: 0;
+	}
+
+	.stat {
+		width: 1.9rem;
+	}
+
+	.stat__key {
+		display: block;
+		margin-left: 0;
+	}
+}

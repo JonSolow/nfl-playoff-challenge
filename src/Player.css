@@ -1,291 +1,297 @@
 .player {
-  border-radius: var(--large);
-  margin: var(--medium) 0;
-  background-color: var(--light-grey);
-  padding: var(--medium);
-  display: grid;
-  align-items: center;
-  grid-template-columns: 2em 2em 2.5em 5.5em auto 2em 2.5em;
-  grid-template-rows: auto;
-  grid-template-areas: 
-    "position image player player player multiplier score"
-    "position image team game-status game-score multiplier score";
+	border-radius: var(--large);
+	margin: var(--medium) 0;
+	background-color: var(--light-grey);
+	padding: var(--medium);
+	display: grid;
+	align-items: center;
+	grid-template-columns: 2em 2em 2.5em 5.5em auto 2em 2.5em;
+	grid-template-rows: auto;
+	grid-template-areas:
+		'position image player player player multiplier score'
+		'position image team game-status game-score multiplier score'
+		'position image stats stats stats multiplier score';
 }
 
 .player__position {
-  font-family: var(--font-2);
-  font-size: 1.2rem;
-  grid-area: position;
-  padding-left: var(--small);
+	font-family: var(--font-2);
+	font-size: 1.2rem;
+	grid-area: position;
+	padding-left: var(--small);
 }
 
 .player__image {
-  grid-area: image;
-  background-color: white;
-  border-radius: 1em;
-  overflow: hidden;
+	grid-area: image;
+	background-color: white;
+	border-radius: 1em;
+	overflow: hidden;
 }
 
 .player__img {
-  transform: translateY(5px);
-  filter: drop-shadow(0px 0px 1px var(--lighter-grey));
+	transform: translateY(5px);
+	filter: drop-shadow(0px 0px 1px var(--lighter-grey));
 }
 
 .player__name {
-  grid-area: player;
-  margin: 0 0.5em;
+	grid-area: player;
+	margin: 0 0.5em;
 }
 
 .player__team {
-  grid-area: team;
-  font-weight: 100;
-  font-size: 0.8rem;
-  margin: 0 0.7em;
+	grid-area: team;
+	font-weight: 100;
+	font-size: 0.8rem;
+	margin: 0 0.7em;
 }
 
 .player__multiplier {
-  font-family: var(--font-3);
-  grid-area: multiplier;
-  justify-self: end;
-  font-size: 0.8rem;
-  font-weight: 700;
-  border-radius: 100%;
-  padding: 0.4em;
-  box-shadow: 0 0 1px 1px white;
-  visibility: hidden;
+	font-family: var(--font-3);
+	grid-area: multiplier;
+	justify-self: end;
+	font-size: 0.8rem;
+	font-weight: 700;
+	border-radius: 100%;
+	padding: 0.4em;
+	box-shadow: 0 0 1px 1px white;
+	visibility: hidden;
 }
 
 .player__multiplier--2 {
-  background-color: var(--yellow);
-  color: black;
-  visibility: visible;
+	background-color: var(--yellow);
+	color: black;
+	visibility: visible;
 }
 
 .player__multiplier--3 {
-  background-color: gold;
-  color: black;
-  visibility: visible;
+	background-color: gold;
+	color: black;
+	visibility: visible;
 }
 
 .player__multiplier--4 {
-  background-color: #8c0404;
-  visibility: visible;
+	background-color: #8c0404;
+	visibility: visible;
 }
 
 .player__score {
-  font-family: var(--font-3);
-  font-size: 1.2rem;
-  grid-area: score;
-  justify-self: end;
+	font-family: var(--font-3);
+	font-size: 1.2rem;
+	grid-area: score;
+	justify-self: end;
 }
 
 .player__game-status,
 .player__game-score {
-  font-size: 0.8rem;
+	font-size: 0.8rem;
 }
 
 .player__game-status {
-  grid-area: game-status;
-  padding-left: var(--large);
+	grid-area: game-status;
+	padding-left: var(--large);
 }
 
 .player__game-score {
-  grid-area: game-score;
+	grid-area: game-score;
 }
 
 @media (min-width: 640px) {
-  .player {
-    max-width: 8em;
-    grid-template-columns: 60% 40%;
-    grid-template-rows: auto 4em 3em 1.2em;
-    grid-template-areas: 
-      "position multiplier"
-      "image image"
-      "player player"
-      "game-status game-score";
-    align-items: end;
-    box-shadow: 0 0 2px 1px white;
-  }
+	.player {
+		max-width: 8em;
+		grid-template-columns: 60% 40%;
+		grid-template-rows: auto 4em 3em 1.2em 2em;
+		grid-template-areas:
+			'position multiplier'
+			'image image'
+			'player player'
+			'game-status game-score'
+			'stats stats';
+		align-items: end;
+		box-shadow: 0 0 2px 1px white;
+	}
 
-  .player__position {
-    padding: 0;
-  }
+	.player--total-week {
+		grid-template-rows: auto 4em 3em 0 0;
+	}
 
-  .player__image {
-    background: none;
-  }
+	.player__position {
+		padding: 0;
+	}
 
-  .player__img {
-    transform: unset;
-    filter: drop-shadow(0 0 1px rgba(221, 221, 221, 0.9))
-  }
+	.player__image {
+		background: none;
+	}
 
-  .player__name {
-    background-color: rgba(221, 221, 221, 0.9);
-    color: black;
-    border-radius: 0.3rem;
-    padding: var(--small);
-    overflow-wrap: break-word;
-    margin: 0.3em 0;
-    box-shadow: 0 0 2px 1px white;
-    min-height: 4em;
-    z-index: 1;
-  }
+	.player__img {
+		transform: unset;
+		filter: drop-shadow(0 0 1px rgba(221, 221, 221, 0.9));
+	}
 
-  .player__score,
-  .player__team {
-    grid-area: player;
-    color: black;
-    z-index: 1;
-  }
+	.player__name {
+		background-color: rgba(221, 221, 221, 0.9);
+		color: black;
+		border-radius: 0.3rem;
+		padding: var(--small);
+		overflow-wrap: break-word;
+		margin: 0.3em 0;
+		box-shadow: 0 0 2px 1px white;
+		min-height: 4em;
+		z-index: 1;
+	}
 
-  .player__score {
-    font-weight: 700;
-    margin: 0.1em var(--small);
-  }
+	.player__score,
+	.player__team {
+		grid-area: player;
+		color: black;
+		z-index: 1;
+	}
 
-  .player__team {
-    margin: var(--medium) var(--small);
-  }
+	.player__score {
+		font-weight: 700;
+		margin: 0.1em var(--small);
+	}
 
-  .player__multiplier {
-    transform: translate(0.3em, -0.3em);
-    padding: 0.2em;
-  }
+	.player__team {
+		margin: var(--medium) var(--small);
+	}
 
-  .player__game-status {
-    padding-left: 0;
-  }
+	.player__multiplier {
+		transform: translate(0.3em, -0.3em);
+		padding: 0.2em;
+	}
 
-  .player__game-score {
-    text-align: right;
-  }
+	.player__game-status {
+		padding-left: 0;
+	}
+
+	.player__game-score {
+		text-align: right;
+	}
 }
 
 .player--ARI {
-  background-color: #97233F;
+	background-color: #97233f;
 }
 
 .player--ATL {
-  background-color: #A71930;
+	background-color: #a71930;
 }
 
 .player--BAL {
-  background-color: #241773;
+	background-color: #241773;
 }
 
 .player--BUF {
-  background-color: #00338D;
+	background-color: #00338d;
 }
 
 .player--CAR {
-  background-color: #0085CA;
+	background-color: #0085ca;
 }
 
 .player--CHI {
-  background-color: #0B162A;
+	background-color: #0b162a;
 }
 
 .player--CIN {
-  background-color: #FB4F14;
+	background-color: #fb4f14;
 }
 
 .player--CLE {
-  background-color: #FF3C00;
+	background-color: #ff3c00;
 }
 
 .player--DAL {
-  background-color: #7F9695;
+	background-color: #7f9695;
 }
 
 .player--DEN {
-  background-color: #002244;
+	background-color: #002244;
 }
 
 .player--DET {
-  background-color: #0076B6;
+	background-color: #0076b6;
 }
 
 .player--GB {
-  background-color: #203731;
+	background-color: #203731;
 }
 
 .player--HOU {
-  background-color: #03202F;
+	background-color: #03202f;
 }
 
 .player--IND {
-  background-color: #002C5F;
+	background-color: #002c5f;
 }
 
 .player--JAX {
-  background-color: #006778;
+	background-color: #006778;
 }
 
 .player--KC {
-  background-color: #E31837;
+	background-color: #e31837;
 }
 
 .player--LAC {
-  background-color: #FFC20E;
+	background-color: #ffc20e;
 }
 
 .player--LAR {
-  background-color: #FFD100;
+	background-color: #ffd100;
 }
 
 .player--LV {
-  background-color: #A5ACAF;
+	background-color: #a5acaf;
 }
 
 .player--MIA {
-  background-color: #008E97;
+	background-color: #008e97;
 }
 
 .player--MIN {
-  background-color: #4F2683;
+	background-color: #4f2683;
 }
 
 .player--NE {
-  background-color: #C60C30;
+	background-color: #c60c30;
 }
 
 .player--NO {
-  background-color: #D3BC8D;
+	background-color: #d3bc8d;
 }
 
 .player--NYG {
-  background-color: #0B2265;
+	background-color: #0b2265;
 }
 
 .player--NYJ {
-  background-color: #125740;
+	background-color: #125740;
 }
 
 .player--PHI {
-  background-color: #004C54;
+	background-color: #004c54;
 }
 
 .player--PIT {
-  background-color: #FFB612;
+	background-color: #ffb612;
 }
 
 .player--SEA {
-  background-color: #69BE28;
+	background-color: #69be28;
 }
 
 .player--SF {
-  background-color: #AA0000;
+	background-color: #aa0000;
 }
 
 .player--TB {
-  background-color: #D50A0A;
+	background-color: #d50a0a;
 }
 
 .player--TEN {
-  background-color: #4B92DB;
+	background-color: #4b92db;
 }
 
 .player--WAS {
-  background-color: #773141;
+	background-color: #773141;
 }
