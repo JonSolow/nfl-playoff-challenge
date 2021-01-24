@@ -46,6 +46,7 @@
 
 .player__multiplier {
 	font-family: var(--font-3);
+	color: black;
 	grid-area: multiplier;
 	justify-self: end;
 	font-size: 0.8rem;
@@ -57,19 +58,17 @@
 }
 
 .player__multiplier--2 {
-	background-color: var(--yellow);
-	color: black;
+	background-color: var(--bright-yellow);
 	visibility: visible;
 }
 
 .player__multiplier--3 {
-	background-color: gold;
-	color: black;
+	background-color: var(--bright-blue);
 	visibility: visible;
 }
 
 .player__multiplier--4 {
-	background-color: #8c0404;
+	background-color: var(--bright-green);
 	visibility: visible;
 }
 
