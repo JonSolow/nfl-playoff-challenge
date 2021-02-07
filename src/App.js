@@ -6,7 +6,7 @@ import './App.css';
 import Header from './Header';
 import Scoreboard from './Scoreboard';
 
-const CURRENT_WEEK = 3;
+const CURRENT_WEEK = 4;
 const ONE_MINUTE = 60000;
 
 function useInterval(callback, delay) {
